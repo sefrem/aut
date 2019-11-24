@@ -1,0 +1,55 @@
+
+.header {
+    background-color: $main-color-light;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    font-family: 'Noto Sans', sans-serif;
+
+    &__main {
+        flex-basis: 1400px;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        padding: 10px 80px ;
+    }
+
+    &__list-item {
+        display:flex;
+    }
+
+    &__links-list {
+        display: flex;
+        flex-direction: row wrap;
+        justify-content: space-around;
+        flex-basis: 790px;
+    }
+
+    &__link {
+        @include font(16px, 600, 0.01em, 23px); // Mixin order: font-size, font-weight, letter-spacing, line-height, color(optional)
+        text-transform: uppercase;
+        align-self: center;
+    }
+
+    &__contact {
+        display: flex;
+    }
+
+    &__phone {
+        @include font(18px, bold, 0.02em, 25px);
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        margin-left: 5px;
+    }
+
+    &__phone-info {
+        @include font(16px, 500, 0.01em, 22px);
+    }
+
+    &__phone-number {
+        margin-bottom: 5px;
+    }
+
+}
+

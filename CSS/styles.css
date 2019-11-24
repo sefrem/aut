@@ -1,0 +1,272 @@
+* {
+  box-sizing: border-box; }
+
+html, body, div, span, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  vertical-align: baseline; }
+
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {
+  display: block; }
+
+body {
+  line-height: 1.2; }
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0; }
+
+ol {
+  padding-left: 1.4em;
+  list-style: decimal; }
+
+ul {
+  padding-left: 0;
+  list-style: square; }
+
+blockquote, q {
+  quotes: none; }
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: '';
+  content: none; }
+
+a {
+  text-decoration: none; }
+
+li {
+  list-style-type: none; }
+
+.header {
+  background-color: #e21c2e;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  font-family: 'Noto Sans', sans-serif; }
+  .header__main {
+    flex-basis: 1400px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    padding: 10px 80px; }
+  .header__list-item {
+    display: flex; }
+  .header__links-list {
+    display: flex;
+    flex-direction: row wrap;
+    justify-content: space-around;
+    flex-basis: 790px; }
+  .header__link {
+    font-size: 16px;
+    font-weight: 600;
+    letter-spacing: 0.01em;
+    line-height: 23px;
+    color: #FFFFFF;
+    text-transform: uppercase;
+    align-self: center; }
+  .header__contact {
+    display: flex; }
+  .header__phone {
+    font-size: 18px;
+    font-weight: bold;
+    letter-spacing: 0.02em;
+    line-height: 25px;
+    color: #FFFFFF;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-left: 5px; }
+  .header__phone-info {
+    font-size: 16px;
+    font-weight: 500;
+    letter-spacing: 0.01em;
+    line-height: 22px;
+    color: #FFFFFF; }
+  .header__phone-number {
+    margin-bottom: 5px; }
+
+.main {
+  font-family: 'Noto Sans', sans-serif; }
+  .main__hero {
+    position: relative;
+    background: linear-gradient(180deg, #E21C2E 10.33%, rgba(226, 28, 46, 0.7) 100%), url(../images/hero-background.png) no-repeat;
+    margin-bottom: 300px;
+    height: 685px;
+    display: flex;
+    justify-content: center; }
+  .main__header {
+    font-size: 48px;
+    font-weight: bold;
+    letter-spacing: 0.05em;
+    line-height: 65px;
+    color: #FFFFFF;
+    margin-top: 114px;
+    text-transform: uppercase; }
+  .main__header-part {
+    font-size: 280px;
+    font-weight: 800;
+    letter-spacing: 0.06em;
+    line-height: 280px;
+    color: #FFFFFF; }
+  .main__hero-image {
+    position: absolute;
+    top: 185px; }
+
+.services {
+  background: url(../images/services/alignment.jpg);
+  margin-bottom: 140px; }
+  .services__wrapper {
+    display: flex;
+    flex-direction: column;
+    background-image: linear-gradient(0deg, rgba(26, 26, 26, 0.7), rgba(26, 26, 26, 0.7)), radial-gradient(circle at 100% -50%, rgba(226, 28, 46, 0.2) 0%, rgba(0, 0, 0, 0.088) 100%), radial-gradient(circle at 50.07% 43.38%, rgba(26, 26, 26, 0.5) 0%, rgba(26, 26, 26, 0.2) 100%); }
+  .services__grid {
+    display: grid;
+    grid-template-columns: 80px 255px minmax(20px, 170px) minmax(300px, 775px) minmax(20px, 125px);
+    grid-template-rows: 180px 120px auto auto;
+    grid-template-areas: ". header . . ." ". . . . ." ". services . description ." ". . . contact .";
+    height: 100vh;
+    align-self: center; }
+  .services__header {
+    font-size: 36px;
+    font-weight: bold;
+    letter-spacing: 0.02em;
+    line-height: 49px;
+    color: #FFFFFF;
+    grid-area: header;
+    align-self: end; }
+  .services__list {
+    font-size: 16px;
+    font-weight: normal;
+    letter-spacing: 0em;
+    line-height: 22px;
+    color: #DFDFDF;
+    grid-area: services;
+    justify-self: end; }
+  .services__list-item {
+    margin-bottom: 20px;
+    width: 177px; }
+    .services__list-item:hover {
+      cursor: pointer; }
+    .services__list-item_active {
+      font-size: 18px;
+      font-weight: bold;
+      letter-spacing: 0em;
+      line-height: 22px;
+      color: #FFFFFF;
+      position: relative; }
+      .services__list-item_active::before {
+        content: '';
+        position: absolute;
+        top: 12px;
+        left: -75px;
+        width: 42px;
+        border: 2px solid #E21C2E; }
+  .services__description {
+    font-size: 16px;
+    font-weight: normal;
+    letter-spacing: 0em;
+    line-height: 26px;
+    color: #DFDFDF;
+    grid-area: description;
+    visibility: hidden; }
+
+.contacts {
+  grid-area: contact;
+  display: flex;
+  max-width: 500px;
+  height: 69px;
+  background: linear-gradient(118deg, white 58%, #e21c2e 58%);
+  border-radius: 20px;
+  justify-content: space-around; }
+  .contacts__info {
+    font-size: 16px;
+    font-weight: normal;
+    letter-spacing: 0em;
+    line-height: 26px;
+    color: #5b5050;
+    align-self: center; }
+  .contacts__phone {
+    font-size: 18px;
+    font-weight: bold;
+    letter-spacing: 0.02em;
+    line-height: 25px;
+    color: #FFFFFF;
+    align-self: center; }
+
+.preload-background-images {
+  display: none;
+  background: url("../images/services/alignment.jpg"), url("../images/services/tireFix.jpg"), url("../images/services/carpet.jpg"), url("../images/services/carWash.jpg"), url("../images/services/castWheels.jpg"), url("../images/services/dryCleaning.jpg"), url("../images/services/headlights.jpg"), url("../images/services/welding.jpg"); }
+
+.about {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 140px; }
+  .about__wrapper {
+    flex-basis: 1200px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between; }
+  .about__description {
+    flex-basis: 610px; }
+  .about__header {
+    display: flex;
+    justify-content: space-between; }
+  .about__header-wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around; }
+  .about__headline {
+    font-size: 36px;
+    font-weight: bold;
+    letter-spacing: 0.02em;
+    line-height: 49px;
+    color: #251D1D; }
+  .about__info {
+    font-size: 16px;
+    font-weight: 500;
+    letter-spacing: 0.01em;
+    line-height: 25px;
+    color: #AFAFAF; }
+  .about__years-number {
+    font-size: 152px;
+    font-weight: 800;
+    letter-spacing: -0.04em;
+    line-height: 152px;
+    color: #FFFFFF;
+    background: linear-gradient(rgba(226, 28, 46, 0.6), rgba(226, 28, 46, 0.6)), linear-gradient(#e21c2e, #e21c2e), url(../images/years.jpg) no-repeat;
+    -webkit-text-fill-color: transparent;
+    -webkit-background-clip: text;
+    background-clip: text;
+    background-blend-mode: normal, color, normal;
+    margin-right: 40px; }
+  .about__description-text {
+    font-size: 16px;
+    font-weight: normal;
+    letter-spacing: 0.01em;
+    line-height: 26px;
+    color: #5B5050; }
+  .about__picture {
+    position: relative; }
+  .about__img {
+    position: relative;
+    z-index: 1; }
+  .about__picture-shadow {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    z-index: 0;
+    top: 6px;
+    left: 10px;
+    background: linear-gradient(rgba(226, 28, 46, 0.6), rgba(226, 28, 46, 0.6)), linear-gradient(#e21c2e, #e21c2e);
+    background-blend-mode: normal, color; }
+
+.advantages__list-icon {
+  background-color: red; }
+
+/*# sourceMappingURL=styles.css.map */

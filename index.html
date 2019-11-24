@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <link rel="stylesheet" href="css/styles.css">
+        <link href="https://fonts.googleapis.com/css?family=Noto+Sans:400,700&display=swap&subset=cyrillic" rel="stylesheet">
+    </head>
+    <body>
+        <!-- Header -->
+        <header class="header">
+            <nav class="header__main">
+                    <ul class="header__links-list">
+                        <li class="header__list-item"><a class="header__link" href="#">Главная</a></li>
+                        <li class="header__list-item"><a class="header__link" href="#">О нас</a></li>
+                        <li class="header__list-item"><a class="header__link" href="#">Наши услуги</a></li>
+                        <li class="header__list-item"><a class="header__link" href="#">Преимущества</a></li>
+                        <li class="header__list-item"><a class="header__link" href="#">Отзывы</a></li>
+                        <li class="header__list-item"><a class="header__link" href="#">Контакты</a></li>
+                    </ul>
+                <div class="header__contact">
+                    <img src="icons/Group 98.svg" alt="">
+                    <div class="header__phone">
+                        <p class="header__phone-number">8 (951) 313-2122 <span class="header__phone-info">(развал-схождение)</span></p>
+                        <p class="header__phone-number">8 (905) 042-3355 <span class="header__phone-info">(автомойка)</span></p>
+                    </div>
+                </div>
+            </nav>
+        </header>
+        <main class="main">
+            <div class="main__hero">
+                <h1 class="main__header">Автосервис <p class="main__header-part">46</p></h1>
+                <img class="main__hero-image" src="images/car.png">
+            </div>
+            <div class="preload-background-images"></div>
+            <div class="services">
+                <div class="services__wrapper">
+                    <div class="services__grid">
+                        <h3 class="services__header">Наши услуги</h3>
+                        <ul class="services__list">
+                            <li class="services__list-item services__list-item_active" data-name="alignment">Развал-схождение</li>
+                            <li class="services__list-item" data-name="tireFix">Шиномонтаж</li>
+                            <li class="services__list-item" data-name="carWash">Автомойка</li>
+                            <li class="services__list-item" data-name="welding">Сварка аргоном</li>
+                            <li class="services__list-item" data-name="headlights">Регулировка фар</li>
+                            <li class="services__list-item" data-name="castWheels">Правка дисков</li>
+                            <li class="services__list-item" data-name="carpet">Чистка ковров</li>
+                            <li class="services__list-item" data-name="dryCleaning">Химчистка салона</li>
+                        </ul>
+                        <p class="services__description" data-name="alignment">Автолюбителям хорошо известно, что даже незначительное вмешательство в работу ходовой части автомобиля, 
+                            приведет к изменению установки углов колес, а следовательно к изменению поведения автомобиля на дороге и 
+                            преждевременному износу шин. Параметры развал&#8209схождения могут зависеть и от других факторов: износа резины, 
+                            давления в шинах, люфтов. И вот такие нарушения могут повлечь за собой серьезные последствия.
+                            <br>
+                            <br>
+                            Мастера нашего сервиса при проведении компьютерного развал-схождения учитывают состояние подвески Вашего автомобиля, 
+                            так как регулировка углов колес должна производиться исключительно на исправной подвеске, иначе регулировка не принесет 
+                            нужных результатов и повлечет дальнейший износ резины.
+                        </p>
+                        <p class="services__description" data-name="tireFix">Преимуществом шиномонтажа у нас является наличие двух 
+                            балансировочных станков различных модификаций, что позволяет правильно отбалансировать шины. Шиномонтажный 
+                            станок со взрывной подкачкой позволяет монтировать любые низкопрофильные, слежавшиеся и другие сложные шины. 
+                            Максимальный размер захвата станка 25 дюймов.</p>
+                        <p class="services__description" data-name="carWash">Все знают как надо качественно мыть автомобиль. 
+                            Но! Самое сложное качественно мыть автомобиль всегда. Каждый раз, когда наши клиенты посещают нашу мойку, 
+                            они точно знают, что их автомобиль помыт как нужно. Всегда. Нас рекомендуют. Приезжайте и Вы.</p>
+                        <p class="services__description" data-name="welding">Сварка аргоном имеет технологический принцип, 
+                            который состоит из использования электродуги. Она же является источником подачи тока, под действием 
+                            которого плавятся кромки металла. В жидком состоянии он заполняет стыковые ниши.</p>
+                        <p class="services__description" data-name="headlights">При активной эксплуатации машины фары постепенно теряют свою яркость, 
+                            и поэтому требуется их проверка и корректная настройка. Регулировка производится при помощи высокоточного диагностического 
+                            оборудования и специального стенда.</p>
+                        <p class="services__description" data-name="castWheels">Правка дисков — это альтернатива прокатке, которая выполняется с использованием 
+                            гидравлического оборудования. В этом случае также происходит исправление нарушенной геометрии — ее можно «заработать» после встречи с ямой 
+                            или камнем на дороге, бордюром и так далее.</p>
+                        <p class="services__description" data-name="carpet">Чистка ковров</p>
+                        <p class="services__description" data-name="dryCleaning">Химчистка салона</p>
+                        <div class="contacts">
+                            <div class="contacts__info">Записывайтесь по телефону:</div>
+                            <div class="contacts__phone">8 (951) 313-2122</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="about">
+                <div class="about__wrapper">
+                    <div class="about__description">
+                        <div class="about__header">
+                            <div class="about__header-wrapper">
+                                <h2 class="about__headline">О нас</h2>
+                                <p class="about__info">Наш автосервис функционирует уже более<br> лет, 
+                                    постоянно совершенствуясь</p>
+                            </div>
+                            <span class="about__years-number">12</span>
+                        </div>
+                        <p class="about__description-text">
+                                Равным образом начало повседневной работы по формированию 
+                                позиции представляет собой интересный эксперимент проверки 
+                                систем массового участия. Повседневная практика показывает, 
+                                что постоянный количественный рост и сфера нашей активности 
+                                требуют от нас анализа форм развития.
+                                <br>
+                                <br>
+                                Значимость этих проблем 
+                                настолько очевидна, что новая модель организационной деятельности 
+                                требуют от нас анализа системы обучения кадров, соответствует 
+                                насущным потребностям.
+                        </p>
+                    </div>
+                    <div class="about__picture">
+                            <img class="about__img" src="images/about.png">
+                        <div class="about__picture-shadow"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="advantages">
+                <div class="advantages__header">
+                    <span class="advantages__quantity">4</span>
+                    <h2 class="advantages__headline">Преимущества нашего сервиса</h2>
+                </div>
+                <div class="advantages__list">
+                    <div class="advantages__list-item">
+                        <div class="advantages__list-icon">
+                            <img src="./icons/Group 46.svg">
+                        </div>
+                        <h4 class="advantages__name">Опытные сотрудники</h4>
+                        <p class="advantages__description">Все сотрудники с 
+                            многолетним опытом работы в шиномонтажной сфере
+                        </p>
+                    </div>
+                    <div class="advantages__list-item">
+                        <div class="advantages__list-icon">
+                             <img src="./icons/Group 47.svg">
+                        </div>
+                        <h4 class="advantages__name">Комфортный сервис</h4>
+                        <p class="advantages__description">Бесплатный wi-fi, кофемашина, 
+                            зона ожидания с телевизором.
+                        </p>
+                    </div>
+                    <div class="advantages__list-item">
+                        <div class="advantages__list-icon">
+                             <img src="./icons/Group 48.svg">
+                        </div>
+                        <h4 class="advantages__name">Современное оборудование</h4>
+                        <p class="advantages__description">Автосервис оснещен современным 
+                            высокотехнологичным оборудованием.
+                        </p>
+                    </div>
+                    <div class="advantages__list-item">
+                        <div class="advantages__list-icon">
+                            <img src="./icons/Group 49.svg">
+                        </div>
+                        <h4 class="advantages__name">Удобное местоположение</h4>
+                        <p class="advantages__description">Автосервис расположен в удобном
+                            месте, надо описать, в каком таком месте.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </main>
+        <script type="text/javascript" src="scripts/index.js"></script>
+    </body>
+</html>
