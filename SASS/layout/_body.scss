@@ -166,10 +166,8 @@
 
     &__years-number {
         @include font(152px, 800, -0.04em, 152px);
-         background: 
-         linear-gradient( rgba(226, 28, 46, 0.6), rgba(226, 28, 46, 0.6)),
-         linear-gradient(rgba(226, 28, 46, 1), rgba(226, 28, 46, 1)),
-         url(../images/years.jpg) no-repeat;
+         background: $primary-gradient,
+                    url(../images/years.jpg) no-repeat;
         -webkit-text-fill-color: transparent;
         -webkit-background-clip: text;
         background-clip: text;
@@ -198,35 +196,65 @@
         z-index: 0;
         top: 6px;
         left: 10px;
-        background: 
-         linear-gradient( rgba(226, 28, 46, 0.6), rgba(226, 28, 46, 0.6)),
-         linear-gradient(rgba(226, 28, 46, 1), rgba(226, 28, 46, 1));
-         background-blend-mode: normal, color;
+        background: $primary-gradient;
+        background-blend-mode: normal, color;
     }
 }
 
 .advantages {
     display: flex;
-    flex-direction: row;
+    justify-content: center;
     background: linear-gradient(0deg, rgba(26, 26, 26, 0.8), rgba(26, 26, 26, 0.8)),
                  url(../images/advantages.jpg) no-repeat;
+    height: 720px;
+    background-position: left top 30%;
+   
+
+    &__content-wrapper {
+        display: flex;
+        flex-direction: row;
+        max-width: 1400px;
+        justify-content: space-around;
+    }
     
+    &__header {
+        display: flex;
+        flex-direction: row;
+        flex-basis: 515px;
+        max-height: 397px;
+    }       
+
     &__headline {
         @include font(34px, 800, 0.02em, 46px);
+        align-self: center;
     }
 
-    &__quantity-wrapper {
-
-    }
     &__quantity {
         @include font(382px, 800, 0.02em, 382px);
-         background: 
-         linear-gradient( rgba(226, 28, 46, 0.6), rgba(226, 28, 46, 0.6)),
-         linear-gradient(rgba(226, 28, 46, 1), rgba(226, 28, 46, 1));
+         background: $primary-gradient;
         -webkit-text-fill-color: transparent;
         -webkit-background-clip: text;
         background-clip: text;
         background-blend-mode: normal, color;
+    }
+
+    &__list {
+        display: flex;
+        flex-flow: row wrap;
+        justify-content: space-around;
+        align-content: space-between;
+        flex-basis: 710px;
+        height: 470px;
+        align-self: center;
+    }
+
+    &__list-item {
+        display: flex;
+        flex-direction: column;
+        max-width: 320px;
+        height: 200px;
+        justify-content: space-between;
+        align-items: center;
     }
 
     &__list-icon {
@@ -239,6 +267,14 @@
         box-shadow: 0px 0px 20px rgba(226, 28, 46, 0.6);
     }
 
+    &__name {
+        @include font(20px, 600, 0, 27px)
+    }
+
+    &__description {
+        @include font(16px, normal, 0.01em, 24px, $text-secondary-light);
+        text-align: center;
+    }
 
 }
 
