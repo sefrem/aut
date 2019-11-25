@@ -181,7 +181,7 @@ li {
   display: flex;
   max-width: 500px;
   height: 69px;
-  background: linear-gradient(118deg, white 58%, #e21c2e 58%);
+  background: linear-gradient(118deg, white 58%, #e21c2e 58.25%);
   border-radius: 20px;
   justify-content: space-around; }
   .contacts__info {
@@ -255,6 +255,7 @@ li {
     position: relative; }
   .about__img {
     position: relative;
+    width: 540px;
     z-index: 1; }
   .about__picture-shadow {
     width: 100%;
@@ -266,7 +267,34 @@ li {
     background: linear-gradient(rgba(226, 28, 46, 0.6), rgba(226, 28, 46, 0.6)), linear-gradient(#e21c2e, #e21c2e);
     background-blend-mode: normal, color; }
 
-.advantages__list-icon {
-  background-color: red; }
+.advantages {
+  display: flex;
+  flex-direction: row;
+  background: linear-gradient(0deg, rgba(26, 26, 26, 0.8), rgba(26, 26, 26, 0.8)), url(../images/advantages.jpg) no-repeat; }
+  .advantages__headline {
+    font-size: 34px;
+    font-weight: 800;
+    letter-spacing: 0.02em;
+    line-height: 46px;
+    color: #FFFFFF; }
+  .advantages__quantity {
+    font-size: 382px;
+    font-weight: 800;
+    letter-spacing: 0.02em;
+    line-height: 382px;
+    color: #FFFFFF;
+    background: linear-gradient(rgba(226, 28, 46, 0.6), rgba(226, 28, 46, 0.6)), linear-gradient(#e21c2e, #e21c2e);
+    -webkit-text-fill-color: transparent;
+    -webkit-background-clip: text;
+    background-clip: text;
+    background-blend-mode: normal, color; }
+  .advantages__list-icon {
+    display: flex;
+    justify-content: center;
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    background: radial-gradient(48.75% 48.75% at 23.75% 21.25%, #FE394B 0%, rgba(254, 57, 75, 0) 100%), #E21C2E;
+    box-shadow: 0px 0px 20px rgba(226, 28, 46, 0.6); }
 
 /*# sourceMappingURL=styles.css.map */
