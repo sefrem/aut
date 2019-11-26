@@ -338,4 +338,44 @@ li {
     color: #DFDFDF;
     text-align: center; }
 
+.reviews {
+  display: flex;
+  width: 100%;
+  flex-direction: column; }
+  .reviews__grid {
+    display: grid;
+    grid-template-columns: minmax(20px, 80px) 155px minmax(400px, 820px) 180px minmax(20px, 165px);
+    grid-template-rows: 130px 50px 200px 155px 185px;
+    grid-template-areas: ". . . . ." ". headline . . ." ". . commas . ." ". arrow-prev review-text arrow-next ." ". . . . . ";
+    align-self: center; }
+  .reviews__headline {
+    grid-area: headline;
+    font-size: 36px;
+    font-weight: bold;
+    letter-spacing: 0.02em;
+    line-height: 49px;
+    color: #251D1D; }
+  .reviews__commas {
+    grid-area: commas;
+    justify-self: center;
+    align-self: center; }
+  .reviews__previous {
+    grid-area: arrow-prev; }
+  .reviews__next {
+    grid-area: arrow-next; }
+  .reviews__review-text-wrapper {
+    grid-area: review-text; }
+  .reviews__review-text {
+    font-size: 18px;
+    font-weight: normal;
+    letter-spacing: 0;
+    line-height: 29px;
+    color: #5B5050; }
+  .reviews__review-name {
+    font-size: 20px;
+    font-weight: 600;
+    letter-spacing: 0;
+    line-height: 27px;
+    color: #251D1D; }
+
 /*# sourceMappingURL=styles.css.map */

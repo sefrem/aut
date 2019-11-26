@@ -116,7 +116,7 @@
     }
 }
 
-.preload-background-images {
+.preload-background-images {    // Preloading background images for the services section
     display: none;
     background: url('../images/services/alignment.jpg'),
                 url('../images/services/tireFix.jpg'),
@@ -128,9 +128,9 @@
                 url('../images/services/welding.jpg')
 }
 
-.about {
+.about {   // Laying out about section
     display: flex;
-    justify-content: center;
+    justify-content: center;  
     margin-bottom: 140px;
 
     &__wrapper {
@@ -201,7 +201,7 @@
     }
 }
 
-.advantages {
+.advantages {   // Laying out the advantages block
     display: flex;
     justify-content: center;
     background: linear-gradient(0deg, rgba(26, 26, 26, 0.8), rgba(26, 26, 26, 0.8)),
@@ -275,7 +275,55 @@
         @include font(16px, normal, 0.01em, 24px, $text-secondary-light);
         text-align: center;
     }
-
 }
 
+.reviews {
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    
+    &__grid {
+    display: grid;
+    grid-template-columns: minmax( 20px, 80px) 155px  minmax(400px, 820px) 180px minmax(20px, 165px);
+    grid-template-rows: 130px 50px 200px 155px 185px;
+    grid-template-areas:
+        ". . . . ."
+        ". headline . . ."
+        ". . commas . ."
+        ". arrow-prev review-text arrow-next ."
+        ". . . . . ";
+    align-self: center;
+    }
+
+    &__headline {
+        grid-area: headline;
+        @include font(36px, bold, 0.02em, 49px, $text-primary-dark)
+    }
+
+    &__commas {
+        grid-area: commas;
+        justify-self: center;
+        align-self: center;
+    }
+
+    &__previous {
+        grid-area: arrow-prev;
+    }
+
+    &__next {
+        grid-area: arrow-next;
+    }
+
+    &__review-text-wrapper {
+        grid-area: review-text;
+    }
+
+    &__review-text {
+        @include font(18px, normal, 0, 29px, $text-secondary-dark)
+    }
+
+    &__review-name {
+        @include font(20px, 600, 0, 27px, $text-primary-dark)
+    }
+}
 
