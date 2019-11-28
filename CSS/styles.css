@@ -381,11 +381,12 @@ li {
     justify-self: center;
     align-self: start;
     transform: rotate(180deg); }
-  .reviews__review-text-wrapper {
+  .reviews__review {
     grid-area: review-text;
     display: flex;
     flex-direction: column;
-    align-items: center; }
+    align-items: center;
+    visibility: hidden; }
   .reviews__review-text {
     font-size: 18px;
     font-weight: normal;

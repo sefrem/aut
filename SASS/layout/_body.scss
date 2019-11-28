@@ -337,11 +337,14 @@
         transform: rotate(180deg);
     }
 
-    &__review-text-wrapper {
+    &__review {
         grid-area: review-text;
         display: flex;
         flex-direction: column;
         align-items: center;
+        visibility: hidden;
+        // transform: translateX(-50%);
+        // transition: transform 0.05s;
     }
 
     &__review-text {
