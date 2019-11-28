@@ -369,7 +369,8 @@ li {
     border-radius: 50%; }
     .reviews__arrow:hover {
       background: radial-gradient(48.75% 48.75% at 23.75% 21.25%, #FE394B 0%, rgba(254, 57, 75, 0) 100%), linear-gradient(0deg, #E21C2E, #E21C2E), #C4C4C4;
-      border-color: #e21c2e; }
+      border-color: #e21c2e;
+      cursor: pointer; }
       .reviews__arrow:hover .reviews__arrow-icon-path {
         fill: white; }
   .reviews__arrow_previous {

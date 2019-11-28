@@ -2,6 +2,7 @@
 const listItem = document.querySelectorAll(".services__list-item");
 const services = document.querySelector(".services");
 const servicesDescription = document.querySelectorAll(".services__description");
+const contactPhone = document.querySelector('.contacts__phone');
 
 let activeItem = listItem[0]; //The active selection by default is the first one
 let activeDescription = servicesDescription[0];
@@ -22,14 +23,15 @@ function changeDescription() {
             activeDescription = item
         }
         if(activeItem.dataset.name === "carWash") {
-            document.querySelector('.contacts__phone').innerHTML = "8 (905) 042-3355";
+            contactPhone.innerHTML = "8 (905) 042-3355";
         } else {
-            document.querySelector('.contacts__phone').innerHTML = "8 (951) 313-2122"
+            contactPhone.innerHTML = "8 (951) 313-2122"
         }
     })
     activeDescription.style.visibility = "visible"
  }
 
+function 
 
 listItem.forEach(item => item.addEventListener('click', onChangeSelect))
 
