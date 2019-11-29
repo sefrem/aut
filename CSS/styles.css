@@ -95,7 +95,7 @@ li {
   font-family: 'Noto Sans', sans-serif; }
   .main__hero {
     position: relative;
-    background: linear-gradient(180deg, #E21C2E 10.33%, rgba(226, 28, 46, 0.7) 100%), url(../images/hero-background.png) no-repeat;
+    background: linear-gradient(180deg, #E21C2E 10.33%, rgba(226, 28, 46, 0.7) 100%), url(../images/hero-background.jpg) no-repeat;
     margin-bottom: 300px;
     height: 685px;
     display: flex;
@@ -176,7 +176,7 @@ li {
     grid-area: description;
     visibility: hidden; }
 
-.contacts {
+.contact {
   grid-area: contact;
   display: flex;
   max-width: 500px;
@@ -184,14 +184,14 @@ li {
   background: linear-gradient(118deg, white 58%, #e21c2e 58.25%);
   border-radius: 20px;
   justify-content: space-around; }
-  .contacts__info {
+  .contact__info {
     font-size: 16px;
     font-weight: normal;
     letter-spacing: 0em;
     line-height: 26px;
     color: #5b5050;
     align-self: center; }
-  .contacts__phone {
+  .contact__phone {
     font-size: 18px;
     font-weight: bold;
     letter-spacing: 0.02em;

@@ -4,7 +4,7 @@
 
     &__hero {
         position: relative;
-        background:  linear-gradient(180deg, #E21C2E 10.33%, rgba(226, 28, 46, 0.7) 100%), url(../images/hero-background.png) no-repeat;
+        background:  linear-gradient(180deg, #E21C2E 10.33%, rgba(226, 28, 46, 0.7) 100%), url(../images/hero-background.jpg) no-repeat;
         margin-bottom: 300px;
         height: 685px;
         display: flex;
@@ -96,7 +96,7 @@
 
 }
 
-.contacts {
+.contact {
     grid-area: contact;
     display: flex;
     max-width: 500px;
@@ -358,3 +358,5 @@
         margin-top: 30px;
     }
 }
+
+

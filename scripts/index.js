@@ -2,7 +2,7 @@
 const listItem = document.querySelectorAll(".services__list-item");
 const services = document.querySelector(".services");
 const servicesDescription = document.querySelectorAll(".services__description");
-const contactPhone = document.querySelector('.contacts__phone');
+const contactPhone = document.querySelector('.contact__phone');
 const arrows = document.querySelectorAll('.reviews__arrow');
 
 
@@ -11,14 +11,14 @@ let activeDescription = servicesDescription[0];
 activeDescription.style.visibility = "visible" //The active description by default is the first one
 let activeReviewId = 1;
 let activeReview = document.getElementById(activeReviewId); //The visible review by default is the firest one.
-activeReview.style.visibility = "visible" 
+activeReview.style.visibility = "visible";
 
 function onChangeSelect(e) {
     services.style.background = `url('./images/services/${e.target.dataset.name}.jpg') no-repeat`;
     activeItem.classList.remove('services__list-item_active')
     this.classList.add('services__list-item_active')
     activeItem = this;
-    changeDescription()
+    changeDescription();
 }
 
 function changeDescription() {
@@ -32,8 +32,8 @@ function changeDescription() {
         } else {
             contactPhone.innerHTML = "8 (951) 313-2122"
         }
-    })
-    activeDescription.style.visibility = "visible"
+    });
+    activeDescription.style.visibility = "visible";
  }
 
  function flipReview(e) {
