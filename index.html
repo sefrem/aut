@@ -4,6 +4,8 @@
         <meta charset="utf-8">
         <link rel="stylesheet" href="css/styles.css">
         <link href="https://fonts.googleapis.com/css?family=Noto+Sans:400,700&display=swap&subset=cyrillic" rel="stylesheet">
+        <script src="https://api-maps.yandex.ru/2.1/?apikey=d8acc4a2-020a-4b90-8a83-15b5f5edf737&lang=ru_RU" type="text/javascript">
+        </script>
     </head>
     <body>
         <!-- Header -->
@@ -27,12 +29,12 @@
             </nav>
         </header>
         <main class="main">
-            <div class="main__hero">
-                <h1 class="main__header">Автосервис <p class="main__header-part">46</p></h1>
-                <img class="main__hero-image" src="images/car.png">
+            <div class="hero mb-180">
+                <h1 class="hero__header">Автосервис <p class="hero__header-line">46</p></h1>
+                <img class="hero__hero-image" src="images/car.png">
             </div>
             <div class="preload-background-images"></div>
-            <div class="services">
+            <div class="services mb-140">
                 <div class="services__wrapper">
                     <div class="services__grid">
                         <h3 class="services__header">Наши услуги</h3>
@@ -81,7 +83,7 @@
                     </div>
                 </div>
             </div>
-            <div class="about">
+            <div class="about mb-140">
                 <div class="about__wrapper">
                     <div class="about__description">
                         <div class="about__header">
@@ -217,9 +219,49 @@
                         </div>
                 </div>
             </div> 
-            <!-- <div class="contacts">
-
-            </div> -->
+            <div class="contacts">
+                <h2 class="contacts__headline">Контакты</h2>
+                <div class="contacts__wrapper">
+                    <div class="contacts__map" id="map">
+                    </div>
+                    
+                    <div class="contacts__contacts-wrapper">
+                        <ul class="contacts__list">
+                            <li class="contacts__list-item">
+                                <img class="contacts__item-icon" src="">
+                                <div class="contacts__item-text">
+                                    <h3 class="contacts__item-name">Адрес</h3>
+                                    <p class="contacts__item-data">г.Курск ул.Дубровинского, 129</p>
+                                </div>
+                            </li>
+                            <li class="contacts__list-item">
+                                <img class="contacts__item-icon" src="">
+                                <div class="contacts__item-text">
+                                    <h3 class="contacts__item-name">Время работы</h3>
+                                    <p class="contacts__item-data">Ежедневно с 9:00 до 21:00</p>
+                                </div>
+                            </li>
+                            <li class="contacts__list-item">
+                                <img class="contacts__item-icon" src="">
+                                <div class="contacts__item-text">
+                                    <h3 class="contacts__item-name">Телефон</h3>
+                                    <p class="contacts__item-data">8 (951) 313-2122 (развал-схождение)
+                                                                    8 (905) 042-3355 (автомойка)
+                                    </p>
+                                </div>
+                            </li>
+                            <li class="contacts__list-item">
+                                <img class="contacts__item-icon" src="">
+                                <div class="contacts__item-text">
+                                    <h3 class="contacts__item-name">Email</h3>
+                                    <p class="contacts__item-data">info@autoservice46.ru</p>
+                                </div>
+                            </li>
+                        </ul>
+                    
+                </div>
+                </div>
+            </div>
         </main>
         <script type="text/javascript" src="scripts/index.js"></script>
     </body>

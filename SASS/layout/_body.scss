@@ -1,15 +1,14 @@
 .main {
 
     font-family: 'Noto Sans', sans-serif;
+}
 
-    &__hero {
+    .hero {
         position: relative;
         background:  linear-gradient(180deg, #E21C2E 10.33%, rgba(226, 28, 46, 0.7) 100%), url(../images/hero-background.jpg) no-repeat;
-        margin-bottom: 300px;
         height: 685px;
         display: flex;
         justify-content: center;
-    }
 
     &__header {
         @include font(48px, bold, 0.05em, 65px); // Mixin order: font-size, font-weight, letter-spacing, line-height, color(optional)
@@ -17,7 +16,7 @@
         text-transform: uppercase;
     }
 
-    &__header-part {
+    &__header-line {
         @include font(280px, 800, 0.06em, 280px);
     }
 
@@ -30,7 +29,6 @@
 
     .services {
         background: url(../images/services/alignment.jpg); // The first service is selected by default so it's background is default            
-        margin-bottom: 140px;
 
     &__wrapper {
         display: flex;
@@ -131,7 +129,6 @@
 .about {   // Laying out about section
     display: flex;
     justify-content: center;  
-    margin-bottom: 140px;
 
     &__wrapper {
     flex-basis: 1200px;
@@ -343,8 +340,6 @@
         flex-direction: column;
         align-items: center;
         visibility: hidden;
-        // transform: translateX(-50%);
-        // transition: transform 0.05s;
     }
 
     &__review-text {
@@ -359,4 +354,34 @@
     }
 }
 
+.contacts {
+    background: linear-gradient(0deg, rgba(26, 26, 26, 0.7), rgba(26, 26, 26, 0.7)), 
+                radial-gradient(circle at 100% -50%, rgba(226, 28, 46, 0.2) 0%, rgba(0, 0, 0, 0.088) 100%), 
+                radial-gradient(circle at 50.07% 43.38%, rgba(26, 26, 26, 0.5) 0%, rgba(26, 26, 26, 0.2) 100%),
+                url('../images/tires.jpg');
 
+    &__headline {
+        @include font(36px, bold, 0.02em, 49px);
+        padding: 76px 0 69px 60px;
+    }
+
+    &__wrapper {
+        display: flex;
+        flex-direction: row;
+    }
+
+    &__map {
+        width: 815px;
+        height: 525px;
+    }
+
+    &__contacts-wrapper {
+        background: linear-gradient(rgba(226, 28, 46, 0.5), rgba(226, 28, 46, 0.5)),
+                    linear-gradient(rgba(226, 28, 46, 0.5), rgba(226, 28, 46, 0.5));
+        background-blend-mode: normal, color;
+        
+    }
+}
+
+// $primary-gradient:  linear-gradient( rgba(226, 28, 46, 0.6), rgba(226, 28, 46, 0.6)),
+//     linear-gradient(rgba(226, 28, 46, 1), rgba(226, 28, 46, 1));

@@ -41,13 +41,30 @@ function changeDescription() {
      if (activeReviewId < 1) activeReviewId = 5;
      if (activeReviewId > 5) activeReviewId = 1;
      activeReview.style.visibility = "hidden";
-    //  activeReview.style.transform = "translateX(-50%)";
      activeReview = document.getElementById(activeReviewId);
      activeReview.style.visibility = "visible";
-    //  activeReview.style.transform = "translateX(0%)";
  }
 
 listItem.forEach(item => item.addEventListener('click', onChangeSelect));
 arrows.forEach(item => item.addEventListener('click', flipReview));
+
+function initMap() {
+    const myMap = new ymaps.Map("map", {
+        center: [51.76595957, 36.22226938],
+        zoom: 17
+    }, {
+        iconLayout: "default#image"
+    });
+    myGeoObject = new ymaps.GeoObject({
+        geometry: {
+            type: "Point",
+            coordinates: [51.76595957, 36.22226938]
+        },
+    });
+    myMap.geoObjects.add(myGeoObject);
+};
+
+ymaps.ready(initMap);
+
 
 

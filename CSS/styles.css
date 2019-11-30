@@ -1,3 +1,9 @@
+.mb-140 {
+  margin-bottom: 140px; }
+
+.mb-180 {
+  margin-bottom: 180px; }
+
 * {
   box-sizing: border-box; }
 
@@ -93,14 +99,14 @@ li {
 
 .main {
   font-family: 'Noto Sans', sans-serif; }
-  .main__hero {
-    position: relative;
-    background: linear-gradient(180deg, #E21C2E 10.33%, rgba(226, 28, 46, 0.7) 100%), url(../images/hero-background.jpg) no-repeat;
-    margin-bottom: 300px;
-    height: 685px;
-    display: flex;
-    justify-content: center; }
-  .main__header {
+
+.hero {
+  position: relative;
+  background: linear-gradient(180deg, #E21C2E 10.33%, rgba(226, 28, 46, 0.7) 100%), url(../images/hero-background.jpg) no-repeat;
+  height: 685px;
+  display: flex;
+  justify-content: center; }
+  .hero__header {
     font-size: 48px;
     font-weight: bold;
     letter-spacing: 0.05em;
@@ -108,19 +114,18 @@ li {
     color: #FFFFFF;
     margin-top: 114px;
     text-transform: uppercase; }
-  .main__header-part {
+  .hero__header-line {
     font-size: 280px;
     font-weight: 800;
     letter-spacing: 0.06em;
     line-height: 280px;
     color: #FFFFFF; }
-  .main__hero-image {
+  .hero__hero-image {
     position: absolute;
     top: 185px; }
 
 .services {
-  background: url(../images/services/alignment.jpg);
-  margin-bottom: 140px; }
+  background: url(../images/services/alignment.jpg); }
   .services__wrapper {
     display: flex;
     flex-direction: column;
@@ -205,8 +210,7 @@ li {
 
 .about {
   display: flex;
-  justify-content: center;
-  margin-bottom: 140px; }
+  justify-content: center; }
   .about__wrapper {
     flex-basis: 1200px;
     display: flex;
@@ -402,5 +406,24 @@ li {
     line-height: 27px;
     color: #251D1D;
     margin-top: 30px; }
+
+.contacts {
+  background: linear-gradient(0deg, rgba(26, 26, 26, 0.7), rgba(26, 26, 26, 0.7)), radial-gradient(circle at 100% -50%, rgba(226, 28, 46, 0.2) 0%, rgba(0, 0, 0, 0.088) 100%), radial-gradient(circle at 50.07% 43.38%, rgba(26, 26, 26, 0.5) 0%, rgba(26, 26, 26, 0.2) 100%), url("../images/tires.jpg"); }
+  .contacts__headline {
+    font-size: 36px;
+    font-weight: bold;
+    letter-spacing: 0.02em;
+    line-height: 49px;
+    color: #FFFFFF;
+    padding: 76px 0 69px 60px; }
+  .contacts__wrapper {
+    display: flex;
+    flex-direction: row; }
+  .contacts__map {
+    width: 815px;
+    height: 525px; }
+  .contacts__contacts-wrapper {
+    background: linear-gradient(rgba(226, 28, 46, 0.5), rgba(226, 28, 46, 0.5)), linear-gradient(rgba(226, 28, 46, 0.5), rgba(226, 28, 46, 0.5));
+    background-blend-mode: normal, color; }
 
 /*# sourceMappingURL=styles.css.map */
