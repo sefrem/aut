@@ -376,10 +376,22 @@
     }
 
     &__contacts-wrapper {
-        background: linear-gradient(rgba(226, 28, 46, 0.5), rgba(226, 28, 46, 0.5)),
-                    linear-gradient(rgba(226, 28, 46, 0.5), rgba(226, 28, 46, 0.5));
-        background-blend-mode: normal, color;
-        
+       
+        // background: linear-gradient( rgba(226, 28, 46, 0.6), rgba(226, 28, 46, 0.6)),
+        //              linear-gradient(rgba(226, 28, 46, 1), rgba(226, 28, 46, 1));
+        // background-blend-mode: normal, color;
+       
+        // -webkit-text-fill-color: transparent;
+        // -webkit-background-clip: text;
+        // mix-blend-mode: color;
+        background:  
+                    url(../images/back.png);
+                    background-blend-mode: color, color;
+                    //  mix-blend-mode: color;
+    }
+
+    &__list {
+        // background: linear-gradient(rgba(226, 28, 46, 1), rgba(226, 28, 46, 1));
     }
 }
 

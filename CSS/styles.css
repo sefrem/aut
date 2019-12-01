@@ -423,7 +423,7 @@ li {
     width: 815px;
     height: 525px; }
   .contacts__contacts-wrapper {
-    background: linear-gradient(rgba(226, 28, 46, 0.5), rgba(226, 28, 46, 0.5)), linear-gradient(rgba(226, 28, 46, 0.5), rgba(226, 28, 46, 0.5));
-    background-blend-mode: normal, color; }
+    background: url(../images/back.png);
+    background-blend-mode: color, color; }
 
 /*# sourceMappingURL=styles.css.map */
