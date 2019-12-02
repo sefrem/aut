@@ -6,7 +6,6 @@
     justify-content: center;
     font-family: 'Noto Sans', sans-serif;
     padding: 10px 80px;
-    transform: translateY(0);
 
     &__main {
         flex-basis: 1400px;
@@ -55,12 +54,11 @@
 
     &_sticky {
         position: sticky;
-        top: 0;
-        padding: 0 80px;
+        top: 0px;
+
         z-index: 99;
         background-color: white;
-        transform: translateY(+100%);
-        transition: transform .35s ease-out;
+        transform: translateY(-100%);
         
         .header__link {
             color: $main-color-light;
@@ -71,7 +69,13 @@
         .header__phone-info {
             color: $main-color-light;
         }
-       
+    }
+
+    &_sticky-inView {
+        padding: 0 80px;
+        transform: translateY(0);
+        transition: transform .35s ease-out;
     }
 }
+
 

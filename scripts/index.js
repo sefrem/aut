@@ -6,7 +6,6 @@ const contactPhone = document.querySelector('.contact__phone');
 const arrows = document.querySelectorAll('.reviews__arrow');
 const header = document.querySelector('.header');
 
-
 let activeItem = listItem[0]; //The active selection by default is the first one
 let activeDescription = servicesDescription[0];
 activeDescription.style.visibility = "visible" //The active description by default is the first one
@@ -14,7 +13,7 @@ let activeReviewId = 1;
 let activeReview = document.getElementById(activeReviewId); //The visible review by default is the firest one.
 activeReview.style.visibility = "visible";
 
-const onChangeSelect = e => {
+function onChangeSelect(e){
     services.style.background = `url('./images/services/${e.target.dataset.name}.jpg') no-repeat`;
     activeItem.classList.remove('services__list-item_active')
     this.classList.add('services__list-item_active')
@@ -76,10 +75,15 @@ const throttle = (func, delay) => {
 const checkHeader = () => {
     let scrollPosition = Math.round(window.scrollY);
     console.log(scrollPosition);
-    if (scrollPosition >= 801) {
-        header.classList.add('header_sticky')
+    if (scrollPosition >= 400) {
+        header.classList.add('header_sticky');
     } else {
         header.classList.remove('header_sticky');
+    };
+    if (scrollPosition >= 801 ) {
+        header.classList.add('header_sticky-inView')
+    } else {
+        header.classList.remove('header_sticky-inView');
     }
 } 
 
