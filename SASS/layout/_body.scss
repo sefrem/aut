@@ -116,14 +116,6 @@
 
 .preload-background-images {    // Preloading background images for the services section
     display: none;
-    background: url('../images/services/alignment.jpg'),
-                url('../images/services/tireFix.jpg'),
-                url('../images/services/carpet.jpg'),
-                url('../images/services/carWash.jpg'),
-                url('../images/services/castWheels.jpg'),
-                url('../images/services/dryCleaning.jpg'),
-                url('../images/services/headlights.jpg'),
-                url('../images/services/welding.jpg')
 }
 
 .about {   // Laying out about section
@@ -371,7 +363,8 @@
     }
 
     &__map {
-        width: 815px;
+        display: flex;
+        flex-basis: 815px;
         height: 525px;
     }
 
@@ -387,11 +380,26 @@
         background:  
                     url(../images/back.png);
                     background-blend-mode: color, color;
-                    //  mix-blend-mode: color;
+        display: flex;
+        
     }
 
     &__list {
-        // background: linear-gradient(rgba(226, 28, 46, 1), rgba(226, 28, 46, 1));
+       align-self: center;
+       display: flex;
+       flex-direction: column;
+        align-items: center;
+    }
+
+    &__list-item {
+        display: flex;
+        width: 400px;
+        flex-direction: row;
+        justify-content: space-between;
+    }
+
+    &__item-icon {
+        
     }
 }
 

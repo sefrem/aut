@@ -54,13 +54,14 @@ li {
   display: flex;
   flex-direction: row;
   justify-content: center;
-  font-family: 'Noto Sans', sans-serif; }
+  font-family: 'Noto Sans', sans-serif;
+  padding: 10px 80px;
+  transform: translateY(0); }
   .header__main {
     flex-basis: 1400px;
     display: flex;
     flex-direction: row;
-    justify-content: space-around;
-    padding: 10px 80px; }
+    justify-content: space-around; }
   .header__list-item {
     display: flex; }
   .header__links-list {
@@ -96,6 +97,20 @@ li {
     color: #FFFFFF; }
   .header__phone-number {
     margin-bottom: 5px; }
+  .header_sticky {
+    position: sticky;
+    top: 0;
+    padding: 0 80px;
+    z-index: 99;
+    background-color: white;
+    transform: translateY(100%);
+    transition: transform .35s ease-out; }
+    .header_sticky .header__link {
+      color: #e21c2e; }
+    .header_sticky .header__phone {
+      color: #e21c2e; }
+    .header_sticky .header__phone-info {
+      color: #e21c2e; }
 
 .main {
   font-family: 'Noto Sans', sans-serif; }
@@ -205,8 +220,7 @@ li {
     align-self: center; }
 
 .preload-background-images {
-  display: none;
-  background: url("../images/services/alignment.jpg"), url("../images/services/tireFix.jpg"), url("../images/services/carpet.jpg"), url("../images/services/carWash.jpg"), url("../images/services/castWheels.jpg"), url("../images/services/dryCleaning.jpg"), url("../images/services/headlights.jpg"), url("../images/services/welding.jpg"); }
+  display: none; }
 
 .about {
   display: flex;
@@ -420,10 +434,22 @@ li {
     display: flex;
     flex-direction: row; }
   .contacts__map {
-    width: 815px;
+    display: flex;
+    flex-basis: 815px;
     height: 525px; }
   .contacts__contacts-wrapper {
     background: url(../images/back.png);
-    background-blend-mode: color, color; }
+    background-blend-mode: color, color;
+    display: flex; }
+  .contacts__list {
+    align-self: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center; }
+  .contacts__list-item {
+    display: flex;
+    width: 400px;
+    flex-direction: row;
+    justify-content: space-between; }
 
 /*# sourceMappingURL=styles.css.map */

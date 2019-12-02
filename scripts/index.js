@@ -4,6 +4,7 @@ const services = document.querySelector(".services");
 const servicesDescription = document.querySelectorAll(".services__description");
 const contactPhone = document.querySelector('.contact__phone');
 const arrows = document.querySelectorAll('.reviews__arrow');
+const header = document.querySelector('.header');
 
 
 let activeItem = listItem[0]; //The active selection by default is the first one
@@ -13,7 +14,7 @@ let activeReviewId = 1;
 let activeReview = document.getElementById(activeReviewId); //The visible review by default is the firest one.
 activeReview.style.visibility = "visible";
 
-function onChangeSelect(e) {
+const onChangeSelect = e => {
     services.style.background = `url('./images/services/${e.target.dataset.name}.jpg') no-repeat`;
     activeItem.classList.remove('services__list-item_active')
     this.classList.add('services__list-item_active')
@@ -21,7 +22,7 @@ function onChangeSelect(e) {
     changeDescription();
 }
 
-function changeDescription() {
+const changeDescription = () => {
     activeDescription.style.visibility = "hidden";
     servicesDescription.forEach(item => {
         if(item.dataset.name === activeItem.dataset.name) {
@@ -36,7 +37,7 @@ function changeDescription() {
     activeDescription.style.visibility = "visible";
  }
 
- function flipReview(e) {
+ const flipReview = e => {
      e.target.dataset.name === "arrow-next" ? activeReviewId++ : activeReviewId--;
      if (activeReviewId < 1) activeReviewId = 5;
      if (activeReviewId > 5) activeReviewId = 1;
@@ -45,10 +46,7 @@ function changeDescription() {
      activeReview.style.visibility = "visible";
  }
 
-listItem.forEach(item => item.addEventListener('click', onChangeSelect));
-arrows.forEach(item => item.addEventListener('click', flipReview));
-
-function initMap() {
+const initMap = () => {
     const myMap = new ymaps.Map("map", {
         center: [51.76595957, 36.22226938],
         zoom: 17
@@ -62,8 +60,38 @@ function initMap() {
         },
     });
     myMap.geoObjects.add(myGeoObject);
-};
+}
 
+const throttle = (func, delay) => {
+    let inThrottle;
+    return function() {
+        if(!inThrottle) {
+            func.apply(this, arguments);
+            inThrottle = true;
+            setTimeout(() => inThrottle = false, delay);
+        }
+    }
+}
+
+const checkHeader = () => {
+    let scrollPosition = Math.round(window.scrollY);
+    console.log(scrollPosition);
+    if (scrollPosition >= 801) {
+        header.classList.add('header_sticky')
+    } else {
+        header.classList.remove('header_sticky');
+    }
+} 
+
+const throttledCheck = throttle(checkHeader, 300);
+
+
+
+
+
+listItem.forEach(item => item.addEventListener('click', onChangeSelect));
+arrows.forEach(item => item.addEventListener('click', flipReview));
+window.addEventListener('scroll', throttledCheck);
 ymaps.ready(initMap);
 
 
