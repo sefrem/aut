@@ -47,7 +47,7 @@
             ". . . . ."
             ". services . description ."
             ". . . contact .";
-        height: 100vh;
+        height: 880px;
         align-self: center;
     }
 
@@ -142,7 +142,6 @@
         display: flex;
         flex-direction: column;
         justify-content: space-around;
-        
     }
 
     &__headline {
@@ -166,27 +165,11 @@
 
     &__description-text {
         @include font (16px, normal, 0.01em, 26px, #5B5050);
-    }
-
-    &__picture {
-        position: relative;
+        width: 100%;
     }
 
     &__img {
-        position: relative;
-        width: 540px;
-        z-index: 1;
-    }
-
-    &__picture-shadow {
-        width: 100%;
-        height: 100%;
-        position: absolute;
-        z-index: 0;
-        top: 6px;
-        left: 10px;
-        background: $primary-gradient;
-        background-blend-mode: normal, color;
+        box-shadow: 10px 10px 0 rgba(226, 28, 46, 1)
     }
 }
 

@@ -74,7 +74,6 @@ const throttle = (func, delay) => {
 
 const checkHeader = () => {
     let scrollPosition = Math.round(window.scrollY);
-    console.log(scrollPosition);
     if (scrollPosition >= 400) {
         header.classList.add('header_sticky');
     } else {
@@ -87,7 +86,7 @@ const checkHeader = () => {
     }
 } 
 
-const throttledCheck = throttle(checkHeader, 300);
+const throttledCheck = throttle(checkHeader, 50);
 
 
 

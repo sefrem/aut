@@ -151,7 +151,7 @@ li {
     grid-template-columns: 80px 255px minmax(20px, 170px) minmax(300px, 775px) minmax(20px, 125px);
     grid-template-rows: 180px 120px auto auto;
     grid-template-areas: ". header . . ." ". . . . ." ". services . description ." ". . . contact .";
-    height: 100vh;
+    height: 880px;
     align-self: center; }
   .services__header {
     font-size: 36px;
@@ -269,22 +269,10 @@ li {
     font-weight: normal;
     letter-spacing: 0.01em;
     line-height: 26px;
-    color: #5B5050; }
-  .about__picture {
-    position: relative; }
+    color: #5B5050;
+    width: 100%; }
   .about__img {
-    position: relative;
-    width: 540px;
-    z-index: 1; }
-  .about__picture-shadow {
-    width: 100%;
-    height: 100%;
-    position: absolute;
-    z-index: 0;
-    top: 6px;
-    left: 10px;
-    background: linear-gradient(rgba(226, 28, 46, 0.6), rgba(226, 28, 46, 0.6)), linear-gradient(#e21c2e, #e21c2e);
-    background-blend-mode: normal, color; }
+    box-shadow: 10px 10px 0 #e21c2e; }
 
 .advantages {
   display: flex;
