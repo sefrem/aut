@@ -41,7 +41,7 @@
     &__grid {
         display: grid;
         grid-template-columns: 80px 255px minmax(20px, 170px) minmax(300px, 775px) minmax(20px, 125px);
-        grid-template-rows: 180px 120px auto auto ;
+        grid-template-rows: 180px 120px 320px auto ;
         grid-template-areas: 
             ". header . . ."
             ". . . . ."
@@ -98,6 +98,7 @@
     grid-area: contact;
     display: flex;
     max-width: 500px;
+    margin-top: 65px;
     height: 69px;
     background: linear-gradient(118deg, white 58%, $main-color-light 58.25%);
     border-radius: 20px;
@@ -334,6 +335,7 @@
                 radial-gradient(circle at 100% -50%, rgba(226, 28, 46, 0.2) 0%, rgba(0, 0, 0, 0.088) 100%), 
                 radial-gradient(circle at 50.07% 43.38%, rgba(26, 26, 26, 0.5) 0%, rgba(26, 26, 26, 0.2) 100%),
                 url('../images/tires.jpg');
+    height: 850px;
 
     &__headline {
         @include font(36px, bold, 0.02em, 49px);
@@ -342,7 +344,7 @@
 
     &__wrapper {
         display: flex;
-        flex-direction: row;
+        justify-content: center;
     }
 
     &__map {
@@ -352,38 +354,58 @@
     }
 
     &__contacts-wrapper {
-       
-        // background: linear-gradient( rgba(226, 28, 46, 0.6), rgba(226, 28, 46, 0.6)),
-        //              linear-gradient(rgba(226, 28, 46, 1), rgba(226, 28, 46, 1));
-        // background-blend-mode: normal, color;
-       
-        // -webkit-text-fill-color: transparent;
-        // -webkit-background-clip: text;
-        // mix-blend-mode: color;
-        background:  
-                    url(../images/back.png);
-                    background-blend-mode: color, color;
-        display: flex;
+        display: grid;
+        background: url(../images/back2.png);
+        grid-template-columns: 90px minmax(300px, 400px) 90px;
+        grid-template-rows: 88px auto auto auto auto 88px;
+        grid-template-areas: 
+                ". . ."
+                ". address ."
+                ". time ."
+                ". phone ."
+                ". email ."
+                ". . ."; 
         
-    }
-
-    &__list {
-       align-self: center;
-       display: flex;
-       flex-direction: column;
-        align-items: center;
     }
 
     &__list-item {
         display: flex;
-        width: 400px;
-        flex-direction: row;
-        justify-content: space-between;
+        
+
+       &_address {
+        grid-area: address;
+       }
+
+       &_time {
+           grid-area: time;
+       }
+
+       &_phone {
+           grid-area: phone;
+       }
+
+       &_email {
+           grid-area: email;
+       }
     }
 
     &__item-icon {
+        align-self: start;
+        margin-right: 45px;
+    }
+
+    &__item-name {
+        @include font(16px, bold, 0.1em, 16px);
+        text-transform: uppercase;
         
     }
+
+    &__item-data {
+        @include font(16px, 500, 0.01em, 23px, $text-secondary-light);
+        margin-top: 10px;
+    }
+
+    
 }
 
 // $primary-gradient:  linear-gradient( rgba(226, 28, 46, 0.6), rgba(226, 28, 46, 0.6)),

@@ -149,7 +149,7 @@ li {
   .services__grid {
     display: grid;
     grid-template-columns: 80px 255px minmax(20px, 170px) minmax(300px, 775px) minmax(20px, 125px);
-    grid-template-rows: 180px 120px auto auto;
+    grid-template-rows: 180px 120px 320px auto;
     grid-template-areas: ". header . . ." ". . . . ." ". services . description ." ". . . contact .";
     height: 880px;
     align-self: center; }
@@ -201,6 +201,7 @@ li {
   grid-area: contact;
   display: flex;
   max-width: 500px;
+  margin-top: 65px;
   height: 69px;
   background: linear-gradient(118deg, white 58%, #e21c2e 58.25%);
   border-radius: 20px;
@@ -411,7 +412,8 @@ li {
     margin-top: 30px; }
 
 .contacts {
-  background: linear-gradient(0deg, rgba(26, 26, 26, 0.7), rgba(26, 26, 26, 0.7)), radial-gradient(circle at 100% -50%, rgba(226, 28, 46, 0.2) 0%, rgba(0, 0, 0, 0.088) 100%), radial-gradient(circle at 50.07% 43.38%, rgba(26, 26, 26, 0.5) 0%, rgba(26, 26, 26, 0.2) 100%), url("../images/tires.jpg"); }
+  background: linear-gradient(0deg, rgba(26, 26, 26, 0.7), rgba(26, 26, 26, 0.7)), radial-gradient(circle at 100% -50%, rgba(226, 28, 46, 0.2) 0%, rgba(0, 0, 0, 0.088) 100%), radial-gradient(circle at 50.07% 43.38%, rgba(26, 26, 26, 0.5) 0%, rgba(26, 26, 26, 0.2) 100%), url("../images/tires.jpg");
+  height: 850px; }
   .contacts__headline {
     font-size: 36px;
     font-weight: bold;
@@ -421,24 +423,43 @@ li {
     padding: 76px 0 69px 60px; }
   .contacts__wrapper {
     display: flex;
-    flex-direction: row; }
+    justify-content: center; }
   .contacts__map {
     display: flex;
     flex-basis: 815px;
     height: 525px; }
   .contacts__contacts-wrapper {
-    background: url(../images/back.png);
-    background-blend-mode: color, color;
-    display: flex; }
-  .contacts__list {
-    align-self: center;
-    display: flex;
-    flex-direction: column;
-    align-items: center; }
+    display: grid;
+    background: url(../images/back2.png);
+    grid-template-columns: 90px minmax(300px, 400px) 90px;
+    grid-template-rows: 88px auto auto auto auto 88px;
+    grid-template-areas: ". . ." ". address ." ". time ." ". phone ." ". email ." ". . ."; }
   .contacts__list-item {
-    display: flex;
-    width: 400px;
-    flex-direction: row;
-    justify-content: space-between; }
+    display: flex; }
+    .contacts__list-item_address {
+      grid-area: address; }
+    .contacts__list-item_time {
+      grid-area: time; }
+    .contacts__list-item_phone {
+      grid-area: phone; }
+    .contacts__list-item_email {
+      grid-area: email; }
+  .contacts__item-icon {
+    align-self: start;
+    margin-right: 45px; }
+  .contacts__item-name {
+    font-size: 16px;
+    font-weight: bold;
+    letter-spacing: 0.1em;
+    line-height: 16px;
+    color: #FFFFFF;
+    text-transform: uppercase; }
+  .contacts__item-data {
+    font-size: 16px;
+    font-weight: 500;
+    letter-spacing: 0.01em;
+    line-height: 23px;
+    color: #DFDFDF;
+    margin-top: 10px; }
 
 /*# sourceMappingURL=styles.css.map */
