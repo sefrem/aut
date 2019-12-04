@@ -14,7 +14,7 @@ let activeReview = document.getElementById(activeReviewId); //The visible review
 activeReview.style.visibility = "visible";
 
 function onChangeSelect(e){
-    services.style.background = `url('./images/services/${e.target.dataset.name}.jpg') no-repeat`;
+    services.style.background = `url('./images/services/${e.target.dataset.name}.jpg') 0% 0% / cover no-repeat`;
     activeItem.classList.remove('services__list-item_active')
     this.classList.add('services__list-item_active')
     activeItem = this;
