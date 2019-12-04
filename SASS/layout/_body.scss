@@ -123,10 +123,11 @@
 
 .about {   // Laying out about section
     display: flex;
-    justify-content: center;  
+    height: 720px;  
 
     &__wrapper {
     flex-basis: 1200px;
+    margin: auto;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -343,7 +344,8 @@
 
     &__headline {
         @include font(36px, bold, 0.02em, 49px);
-        padding: 76px 0 69px 60px;
+        padding: 76px 0 69px 330px;
+        
     }
 
     &__wrapper {

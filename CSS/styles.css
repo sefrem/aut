@@ -110,6 +110,7 @@ li {
   .header_sticky {
     position: sticky;
     top: 0px;
+    padding: 0 80px;
     z-index: 99;
     background-color: white;
     transform: translateY(-100%); }
@@ -248,9 +249,10 @@ li {
 
 .about {
   display: flex;
-  justify-content: center; }
+  height: 720px; }
   .about__wrapper {
     flex-basis: 1200px;
+    margin: auto;
     display: flex;
     flex-direction: row;
     justify-content: space-between; }
@@ -444,7 +446,7 @@ li {
     letter-spacing: 0.02em;
     line-height: 49px;
     color: #FFFFFF;
-    padding: 76px 0 69px 60px; }
+    padding: 76px 0 69px 330px; }
   .contacts__wrapper {
     display: flex;
     justify-content: center; }
