@@ -110,7 +110,6 @@ li {
   .header_sticky {
     position: sticky;
     top: 0px;
-    padding: 0 80px;
     z-index: 99;
     background-color: white;
     transform: translateY(-100%); }
