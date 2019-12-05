@@ -12,6 +12,7 @@ activeDescription.style.visibility = "visible" //The active description by defau
 let activeReviewId = 1;
 let activeReview = document.getElementById(activeReviewId); //The visible review by default is the firest one.
 activeReview.style.visibility = "visible";
+let mapsInitialized = false;
 
 function onChangeSelect(e){
     services.style.background = `url('./images/services/${e.target.dataset.name}.jpg') 0% 0% / cover no-repeat`;
@@ -84,6 +85,10 @@ const checkHeader = () => {
     } else {
         header.classList.remove('header_sticky-inView');
     }
+    if (scrollPosition >= 3500 && !mapsInitialized) {
+        ymaps.ready(initMap);
+        mapsInitialized = true;
+    }
 } 
 
 const throttledCheck = throttle(checkHeader, 50);
@@ -91,11 +96,10 @@ const throttledCheck = throttle(checkHeader, 50);
 
 
 
-
 listItem.forEach(item => item.addEventListener('click', onChangeSelect));
 arrows.forEach(item => item.addEventListener('click', flipReview));
 window.addEventListener('scroll', throttledCheck);
-ymaps.ready(initMap);
+
 
 
 
