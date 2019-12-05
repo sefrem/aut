@@ -119,6 +119,15 @@
 
 .preload-background-images {    // Preloading background images for the services section
     display: none;
+    background: url(../images/services/alignment.jpg),
+                url(../images/services/tireFix.jpg),
+                url(../images/services/carpet.jpg),
+                url(../images/services/carWash.jpg),
+                url(../images/services/castWheels.jpg),
+                url(../images/services/dryCleaning.jpg),
+                url(../images/services/headlights.jpg),
+                url(../images/services/welding.jpg);
+
 }
 
 .about {   // Laying out about section
