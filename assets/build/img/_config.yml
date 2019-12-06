@@ -1,0 +1,4 @@
+webrick:
+  headers:
+    My-Header: Cache-Control "max-age=172800"
+    My-Other-Header: My-Other-Value
