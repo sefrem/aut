@@ -43,7 +43,7 @@ var gulp = require('gulp'),  // подключаем Gulp
     sass = require('gulp-sass'), // модуль для компиляции SASS (SCSS) в CSS
     autoprefixer = require('gulp-autoprefixer'), // модуль для автоматической установки автопрефиксов
     cleanCSS = require('gulp-clean-css'), // плагин для минимизации CSS
-    uglify = require('gulp-uglify'), // модуль для минимизации JavaScript
+    terser = require('gulp-terser'), // модуль для минимизации JavaScript
     cache = require('gulp-cache'), // модуль для кэширования
     imagemin = require('gulp-imagemin'), // плагин для сжатия PNG, JPEG, GIF и SVG изображений
     jpegrecompress = require('imagemin-jpeg-recompress'), // плагин для сжатия jpeg	
@@ -89,7 +89,7 @@ gulp.task('js:build', function () {
       .pipe(gulp.dest(path.build.js))
       .pipe(rename({ suffix: '.min' }))
       .pipe(sourcemaps.init()) //инициализируем sourcemap
-      .pipe(uglify()) // минимизируем js
+      .pipe(terser()) // минимизируем js
       .pipe(sourcemaps.write('./')) //  записываем sourcemap
       .pipe(gulp.dest(path.build.js)) // положим готовый файл
       .pipe(webserver.reload({ stream: true })); // перезагрузим сервер
@@ -112,6 +112,11 @@ gulp.task('image:build', function () {
       .pipe(gulp.dest(path.build.img)); // выгрузка готовых файлов
 });
 
+gulp.task('icons:build', function () {
+  return gulp.src(path.src.icons)
+      .pipe(gulp.dest(path.build.icons))
+});
+
 // удаление каталога build 
 gulp.task('clean:build', function () {
   return gulp.src(path.clean, { read: false })
@@ -130,7 +135,8 @@ gulp.task('build',
           'html:build',
           'css:build',
           'js:build',
-          'image:build'
+          'image:build',
+          'icons:build'
       )
   )
 );
@@ -141,6 +147,7 @@ gulp.task('watch', function () {
   gulp.watch(path.watch.css, gulp.series('css:build'));
   gulp.watch(path.watch.js, gulp.series('js:build'));
   gulp.watch(path.watch.img, gulp.series('image:build'));
+  gulp.watch(path.watch.icons, gulp.series('icons:build'));
 });
 
 // задача по умолчанию
