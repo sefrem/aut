@@ -1,13 +1,13 @@
 'use strict'
 
-/* пути к исходным файлам (src), к готовым файлам (build), а также к тем, за изменениями которых нужно наблюдать (watch) */
+/* пути к исходным файлам (src), к готовым файлам (docs), а также к тем, за изменениями которых нужно наблюдать (watch) */
 var path = {
-  build: {
-      html: 'assets/build/',
-      js: 'assets/build/js/',
-      css: 'assets/build/css/',
-      img: 'assets/build/img/',
-      icons: 'assets/build/icons/'
+  docs: {
+      html: 'docs/',
+      js: 'docs/js/',
+      css: 'docs/css/',
+      img: 'docs/img/',
+      icons: 'docs/icons/'
   },
   src: {
       html: 'assets/src/*.html',
@@ -23,13 +23,13 @@ var path = {
       img: 'assets/src/img/**/*.*',
       icons: 'assets/srs/icons/**/*.*'
   },
-  clean: './assets/build/*'
+  clean: './docs/*'
 };
 
 /* настройки сервера */
 var config = {
   server: {
-      baseDir: './assets/build'
+      baseDir: './docs'
   },
   notify: false
 };
@@ -58,46 +58,46 @@ gulp.task('webserver', function () {
   webserver(config);
 });
 
-gulp.task('html:build', function () {
+gulp.task('html:docs', function () {
   return gulp.src(path.src.html) // выбор всех html файлов по указанному пути
       .pipe(plumber()) // отслеживание ошибок
       .pipe(rigger()) // импорт вложений
-      .pipe(gulp.dest(path.build.html)) // выкладывание готовых файлов
+      .pipe(gulp.dest(path.docs.html)) // выкладывание готовых файлов
       .pipe(webserver.reload({ stream: true })); // перезагрузка сервера
 });
 
 // сбор стилей
-gulp.task('css:build', function () {
+gulp.task('css:docs', function () {
   return gulp.src(path.src.style) // получим main.scss
       .pipe(plumber()) // для отслеживания ошибок
       .pipe(sourcemaps.init()) // инициализируем sourcemap
       .pipe(sass()) // scss -> css
       .pipe(autoprefixer()) // добавим префиксы
-      .pipe(gulp.dest(path.build.css))
+      .pipe(gulp.dest(path.docs.css))
       .pipe(rename({ suffix: '.min' }))
       .pipe(cleanCSS()) // минимизируем CSS
       .pipe(sourcemaps.write('./')) // записываем sourcemap
-      .pipe(gulp.dest(path.build.css)) // выгружаем в build
+      .pipe(gulp.dest(path.docs.css)) // выгружаем в docs
       .pipe(webserver.reload({ stream: true })); // перезагрузим сервер
 });
 
 // сбор js
-gulp.task('js:build', function () {
+gulp.task('js:docs', function () {
   return gulp.src(path.src.js) // получим файл main.js
       .pipe(plumber()) // для отслеживания ошибок
       .pipe(rigger()) // импортируем все указанные файлы в main.js
-      .pipe(gulp.dest(path.build.js))
+      .pipe(gulp.dest(path.docs.js))
       .pipe(rename({ suffix: '.min' }))
       .pipe(sourcemaps.init()) //инициализируем sourcemap
       .pipe(terser()) // минимизируем js
       .pipe(sourcemaps.write('./')) //  записываем sourcemap
-      .pipe(gulp.dest(path.build.js)) // положим готовый файл
+      .pipe(gulp.dest(path.docs.js)) // положим готовый файл
       .pipe(webserver.reload({ stream: true })); // перезагрузим сервер
 });
 
 
 // обработка картинок
-gulp.task('image:build', function () {
+gulp.task('image:docs', function () {
   return gulp.src(path.src.img) // путь с исходниками картинок
       .pipe(cache(imagemin([ // сжатие изображений
           imagemin.gifsicle({ interlaced: true }),
@@ -109,16 +109,16 @@ gulp.task('image:build', function () {
           pngquant(),
           imagemin.svgo({ plugins: [{ removeViewBox: false }] })
       ])))
-      .pipe(gulp.dest(path.build.img)); // выгрузка готовых файлов
+      .pipe(gulp.dest(path.docs.img)); // выгрузка готовых файлов
 });
 
-gulp.task('icons:build', function () {
+gulp.task('icons:docs', function () {
   return gulp.src(path.src.icons)
-      .pipe(gulp.dest(path.build.icons))
+      .pipe(gulp.dest(path.docs.icons))
 });
 
-// удаление каталога build 
-gulp.task('clean:build', function () {
+// удаление каталога docs 
+gulp.task('clean:docs', function () {
   return gulp.src(path.clean, { read: false })
       .pipe(rimraf());
 });
@@ -129,29 +129,29 @@ gulp.task('cache:clear', function () {
 });
 
 // сборка
-gulp.task('build',
-  gulp.series('clean:build',
+gulp.task('docs',
+  gulp.series('clean:docs',
       gulp.parallel(
-          'html:build',
-          'css:build',
-          'js:build',
-          'image:build',
-          'icons:build'
+          'html:docs',
+          'css:docs',
+          'js:docs',
+          'image:docs',
+          'icons:docs'
       )
   )
 );
 
 // запуск задач при изменении файлов
 gulp.task('watch', function () {
-  gulp.watch(path.watch.html, gulp.series('html:build'));
-  gulp.watch(path.watch.css, gulp.series('css:build'));
-  gulp.watch(path.watch.js, gulp.series('js:build'));
-  gulp.watch(path.watch.img, gulp.series('image:build'));
-  gulp.watch(path.watch.icons, gulp.series('icons:build'));
+  gulp.watch(path.watch.html, gulp.series('html:docs'));
+  gulp.watch(path.watch.css, gulp.series('css:docs'));
+  gulp.watch(path.watch.js, gulp.series('js:docs'));
+  gulp.watch(path.watch.img, gulp.series('image:docs'));
+  gulp.watch(path.watch.icons, gulp.series('icons:docs'));
 });
 
 // задача по умолчанию
 gulp.task('default', gulp.series(
-  'build',
+  'docs',
   gulp.parallel('webserver','watch')      
 ));
