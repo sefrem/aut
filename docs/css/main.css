@@ -57,12 +57,16 @@ li {
   -webkit-box-orient: horizontal;
   -webkit-box-direction: normal;
           flex-direction: row;
-  -webkit-box-pack: center;
-          justify-content: center;
+  -webkit-box-pack: justify;
+          justify-content: space-between;
   font-family: 'Noto Sans', sans-serif;
   padding: 10px 80px; }
+  @media (max-width: 1200px) {
+    .header {
+      -webkit-box-pack: center;
+              justify-content: center; } }
   .header__main {
-    flex-basis: 1400px;
+    flex-basis: 800px;
     display: -webkit-box;
     display: flex;
     -webkit-box-orient: horizontal;
@@ -70,6 +74,9 @@ li {
             flex-direction: row;
     -webkit-box-pack: justify;
             justify-content: space-between; }
+    @media (max-width: 1200px) {
+      .header__main {
+        display: none; } }
   .header__list-item {
     display: -webkit-box;
     display: flex; }
@@ -94,6 +101,7 @@ li {
   .header__phone-icon {
     display: -webkit-box;
     display: flex;
+    flex-shrink: 0;
     width: 45px;
     height: 45px;
     margin-right: 30px;
@@ -115,8 +123,7 @@ li {
     -webkit-box-direction: normal;
             flex-direction: column;
     -webkit-box-pack: center;
-            justify-content: center;
-    margin-left: 5px; }
+            justify-content: center; }
   .header__phone-info {
     font-size: 16px;
     font-weight: 500;
@@ -125,32 +132,34 @@ li {
     color: #FFFFFF; }
   .header__phone-number {
     margin-bottom: 5px; }
-  .header_sticky {
-    position: -webkit-sticky;
-    position: sticky;
-    top: 0px;
-    z-index: 99;
-    background-color: white;
-    -webkit-transform: translateY(-100%);
-            transform: translateY(-100%); }
-    .header_sticky .header__link {
-      color: #251D1D; }
-    .header_sticky .header__phone {
-      color: #e21c2e; }
-    .header_sticky .header__phone-info {
-      color: #251D1D; }
-    .header_sticky .header__phone-icon {
-      border: none;
-      -webkit-animation: pulse 2s infinite;
-              animation: pulse 2s infinite; }
-  .header_sticky-inView {
-    padding: 5px 80px;
-    -webkit-transform: translateY(0);
-            transform: translateY(0);
-    -webkit-transition: -webkit-transform .35s ease-out;
-    transition: -webkit-transform .35s ease-out;
-    transition: transform .35s ease-out;
-    transition: transform .35s ease-out, -webkit-transform .35s ease-out; }
+  @media (min-width: 1200px) {
+    .header_sticky {
+      position: -webkit-sticky;
+      position: sticky;
+      top: 0px;
+      z-index: 99;
+      background-color: white;
+      -webkit-transform: translateY(-100%);
+              transform: translateY(-100%); }
+      .header_sticky .header__link {
+        color: #251D1D; }
+      .header_sticky .header__phone {
+        color: #e21c2e; }
+      .header_sticky .header__phone-info {
+        color: #251D1D; }
+      .header_sticky .header__phone-icon {
+        border: none;
+        -webkit-animation: pulse 2s infinite;
+                animation: pulse 2s infinite; } }
+  @media (min-width: 1200px) {
+    .header_sticky-inView {
+      padding: 5px 80px;
+      -webkit-transform: translateY(0);
+              transform: translateY(0);
+      -webkit-transition: -webkit-transform .35s ease-out;
+      transition: -webkit-transform .35s ease-out;
+      transition: transform .35s ease-out;
+      transition: transform .35s ease-out, -webkit-transform .35s ease-out; } }
 
 @-webkit-keyframes pulse {
   0% {
@@ -174,6 +183,9 @@ li {
   /* добавляем "гамбургер" */
   /* контейнер меню */
   /* скрываем чекбокс */ }
+  @media (min-width: 1200px) {
+    .menu {
+      display: none; } }
   .menu__btn {
     display: -webkit-box;
     display: flex;
@@ -276,7 +288,9 @@ li {
     color: #FFFFFF; }
   .hero__hero-image {
     position: absolute;
-    top: 185px; }
+    top: 185px;
+    max-width: 100%;
+    height: auto; }
 
 .preload-background-images {
   background: url(../img/services/tireFix.jpg), url(../img/services/carpet.jpg), url(../img/services/carWash.jpg), url(../img/services/castWheels.jpg), url(../img/services/dryCleaning.jpg), url(../img/services/headlights.jpg), url(../img/services/welding.jpg); }
@@ -369,20 +383,29 @@ li {
 
 .about {
   display: -webkit-box;
-  display: flex;
-  height: 720px; }
+  display: flex; }
   .about__wrapper {
-    flex-basis: 1200px;
-    margin: auto;
+    flex-basis: 1400px;
+    padding: 155px 0;
     display: -webkit-box;
     display: flex;
     -webkit-box-orient: horizontal;
     -webkit-box-direction: normal;
             flex-direction: row;
-    -webkit-box-pack: justify;
-            justify-content: space-between; }
+    justify-content: space-around; }
+    @media (max-width: 800px) {
+      .about__wrapper {
+        padding: 60px 0;
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+                flex-direction: column;
+        -webkit-box-pack: justify;
+                justify-content: space-between;
+        -webkit-box-align: center;
+                align-items: center; } }
   .about__description {
-    flex-basis: 610px; }
+    max-width: 570px;
+    margin-left: 20px; }
   .about__header {
     display: -webkit-box;
     display: flex;
@@ -428,7 +451,13 @@ li {
     color: #5B5050;
     width: 100%; }
   .about__img {
-    box-shadow: 10px 10px 0 #e21c2e; }
+    margin: 0 20px 0 10px;
+    box-shadow: 10px 10px 0 #e21c2e;
+    max-width: 100%;
+    height: auto; }
+    @media (max-width: 800px) {
+      .about__img {
+        margin-top: 15px; } }
 
 .advantages {
   display: -webkit-box;

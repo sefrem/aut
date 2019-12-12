@@ -5,6 +5,8 @@ const servicesDescription = document.querySelectorAll(".services__description");
 const contactPhone = document.querySelector('.contact__phone');
 const arrows = document.querySelectorAll('.reviews__arrow');
 const header = document.querySelector('.header');
+const hamburgerCheckbox = document.getElementById("menu__toggle");
+const main = document.querySelector(".main");
 
 let activeItem = listItem[0]; //The active selection by default is the first one
 let activeDescription = servicesDescription[0];
@@ -93,9 +95,13 @@ const checkHeader = () => {
 
 const throttledCheck = throttle(checkHeader, 50);
 
+const closeHamburgerMenu = () => {
+    if(hamburgerCheckbox.checked) hamburgerCheckbox.checked = false;
+}
 
 
 
 listItem.forEach(item => item.addEventListener('click', onChangeSelect));
 arrows.forEach(item => item.addEventListener('click', flipReview));
 window.addEventListener('scroll', throttledCheck);
+main.addEventListener('click', closeHamburgerMenu)
