@@ -54,11 +54,11 @@ li {
   background-color: #e21c2e;
   display: -webkit-box;
   display: flex;
+  flex-basis: 1400px;
   -webkit-box-orient: horizontal;
   -webkit-box-direction: normal;
           flex-direction: row;
-  -webkit-box-pack: justify;
-          justify-content: space-between;
+  justify-content: space-around;
   font-family: 'Noto Sans', sans-serif;
   padding: 10px 80px; }
   @media (max-width: 1200px) {
@@ -386,6 +386,7 @@ li {
   display: flex; }
   .about__wrapper {
     flex-basis: 1400px;
+    margin: auto;
     padding: 155px 0;
     display: -webkit-box;
     display: flex;

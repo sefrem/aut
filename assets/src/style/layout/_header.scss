@@ -2,8 +2,9 @@
 .header {
     background-color: $main-color-light;
     display: flex;
+    flex-basis: 1400px;
     flex-direction: row;
-    justify-content: space-between;
+    justify-content: space-around;
     font-family: 'Noto Sans', sans-serif;
     padding: 10px 80px;
 
