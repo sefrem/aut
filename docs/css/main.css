@@ -288,9 +288,18 @@ li {
     color: #FFFFFF; }
   .hero__hero-image {
     position: absolute;
-    top: 185px;
+    top: 205px;
     max-width: 100%;
     height: auto; }
+    @media (max-width: 900px) {
+      .hero__hero-image {
+        top: 270px; } }
+    @media (max-width: 600px) {
+      .hero__hero-image {
+        top: 295px; } }
+    @media (max-width: 400px) {
+      .hero__hero-image {
+        top: 335px; } }
 
 .preload-background-images {
   background: url(../img/services/tireFix.jpg), url(../img/services/carpet.jpg), url(../img/services/carWash.jpg), url(../img/services/castWheels.jpg), url(../img/services/dryCleaning.jpg), url(../img/services/headlights.jpg), url(../img/services/welding.jpg); }
@@ -458,7 +467,7 @@ li {
     height: auto; }
     @media (max-width: 800px) {
       .about__img {
-        margin-top: 15px; } }
+        margin-top: 50px; } }
 
 .advantages {
   display: -webkit-box;

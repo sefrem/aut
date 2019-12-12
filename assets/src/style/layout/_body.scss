@@ -23,9 +23,21 @@
 
     &__hero-image {
         position: absolute;
-        top: 185px;
+        top: 205px;
         max-width: 100%;
-  height: auto;
+        height: auto;
+
+        @media(max-width: 900px) {
+            top: 270px;
+        }
+
+        @media(max-width: 600px) {
+            top: 295px;
+        }
+
+        @media(max-width: 400px) {
+            top: 335px;
+        }
     }
 }
     //Laying out the services section.
@@ -196,7 +208,7 @@
         height: auto;
         
         @media(max-width: 800px) {
-            margin-top: 15px;
+            margin-top: 50px;
         }
     }
 }
