@@ -7,6 +7,9 @@
     justify-content: space-around;
     font-family: 'Noto Sans', sans-serif;
     padding: 10px 80px;
+    @media(max-width: 600px){
+      padding-right: 40px;
+    }
 
     @media(max-width: $tablet-width) {
         justify-content: center;
@@ -42,6 +45,9 @@
     &__contact {
         display: flex;
         justify-content: space-between;
+        @media(max-width: 600px){
+          flex-direction: row-reverse;
+        }
     }
 
     &__phone-icon {
@@ -54,6 +60,10 @@
         background: radial-gradient(48.75% 48.75% at 23.75% 21.25%, #FE394B 0%, rgba(254, 57, 75, 0) 100%), #E21C2E;;
         align-self: center;
         border: 1px solid white;
+        @media(max-width: 600px){
+          margin-right: 0;
+          margin-left: 10px;
+        }
     }
 
     &__phone-icon-svg {
@@ -73,6 +83,7 @@
 
     &__phone-number {
         margin-bottom: 5px;
+        color: inherit;
     }
 
     &_sticky {

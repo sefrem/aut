@@ -1,0 +1,80 @@
+.reviews {
+    
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    
+    &__grid {
+    display: grid;
+    grid-template-columns: minmax( 20px, 80px) 155px  minmax(400px, 820px) 155px minmax(20px, 190px);
+    grid-template-rows: 130px 50px 200px 155px 185px;
+    grid-template-areas:
+        ". . . . ."
+        ". headline . . ."
+        ". . commas . ."
+        ". arrow-prev review-text arrow-next ."
+        ". . . . . ";
+    align-self: center;
+    }
+
+    &__headline {
+        grid-area: headline;
+        @include font(36px, bold, 0.02em, 49px, $text-primary-dark)
+    }
+
+    &__commas {
+        grid-area: commas;
+        justify-self: center;
+        align-self: center;
+    }
+
+    &__arrow {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 45px;
+        height: 45px;
+        border: 1.5px solid $text-secondary-light;
+        border-radius: 50%;
+        &:hover {
+            background: radial-gradient(48.75% 48.75% at 23.75% 21.25%, #FE394B 0%, rgba(254, 57, 75, 0) 100%), 
+                        linear-gradient(0deg, #E21C2E, #E21C2E), #C4C4C4;
+            border-color: $main-color-light;
+            cursor: pointer;
+                        .reviews__arrow-icon-path {
+                            fill: white;
+                        }
+        }
+    }
+
+    &__arrow_previous {
+        grid-area: arrow-prev;
+        justify-self: center;
+    }
+
+    &__arrow_next {
+        grid-area: arrow-next;
+        justify-self: center;
+        align-self: start;
+        transform: rotate(180deg);
+    }
+
+    &__review {
+        grid-area: review-text;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        visibility: hidden;
+    }
+
+    &__review-text {
+        @include font(18px, normal, 0, 29px, $text-secondary-dark);
+        padding: 0 40px;
+        text-align: center;
+    }
+
+    &__review-name {
+        @include font(20px, 600, 0, 27px, $text-primary-dark);
+        margin-top: 30px;
+    }
+}

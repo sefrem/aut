@@ -1,0 +1,50 @@
+.main {
+
+    font-family: 'Noto Sans', sans-serif;
+}
+
+    .hero {
+        $hero: '../img/hero-background.jpg';
+        position: relative;
+        background:  linear-gradient(180deg, #E21C2E 10.33%, rgba(226, 28, 46, 0.7) 100%), 
+        url(../img/hero-background.jpg) center center no-repeat;
+        background-size: cover;
+        height: 685px;
+        display: flex;
+        justify-content: center;
+
+        @media(max-width: 1200px){
+            background:  linear-gradient(180deg, #E21C2E 10.33%, rgba(226, 28, 46, 0.7) 100%), 
+            url(../img/hero-background-md.jpg) center center no-repeat;
+            background-size: cover;
+        }
+
+    &__header {
+        @include font(48px, bold, 0.05em, 65px); // Mixin order: font-size, font-weight, letter-spacing, line-height, color(optional)
+        margin-top: 114px;
+        text-transform: uppercase;
+    }
+
+    &__header-line {
+        @include font(280px, 800, 0.06em, 280px);
+    }
+
+    &__hero-image {
+        position: absolute;
+        top: 205px;
+        max-width: 100%;
+        height: auto;
+
+        @media(max-width: 900px) {
+            top: 270px;
+        }
+
+        @media(max-width: 600px) {
+            top: 295px;
+        }
+
+        @media(max-width: 400px) {
+            top: 335px;
+        }
+    }
+}

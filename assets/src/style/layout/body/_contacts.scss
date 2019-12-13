@@ -1,0 +1,77 @@
+.contacts {
+    background: linear-gradient(0deg, rgba(26, 26, 26, 0.7), rgba(26, 26, 26, 0.7)), 
+                radial-gradient(circle at 100% -50%, rgba(226, 28, 46, 0.2) 0%, rgba(0, 0, 0, 0.088) 100%), 
+                radial-gradient(circle at 50.07% 43.38%, rgba(26, 26, 26, 0.5) 0%, rgba(26, 26, 26, 0.2) 100%),
+                url('../img/tires.jpg') no-repeat;
+    background-size: cover;
+    height: 850px;
+
+    &__headline {
+        @include font(36px, bold, 0.02em, 49px);
+        padding: 76px 0 69px 330px;
+        
+    }
+
+    &__wrapper {
+        display: flex;
+        justify-content: center;
+    }
+
+    &__map {
+        display: flex;
+        flex-basis: 815px;
+        height: 525px;
+    }
+
+    &__contacts-wrapper {
+        display: grid;
+        background: url(../img/back2.png);
+        grid-template-columns: 90px minmax(300px, 400px) 90px;
+        grid-template-rows: 88px auto auto auto auto 88px;
+        grid-template-areas: 
+                ". . ."
+                ". address ."
+                ". time ."
+                ". phone ."
+                ". email ."
+                ". . ."; 
+        
+    }
+
+    &__list-item {
+        display: flex;
+        
+
+       &_address {
+        grid-area: address;
+       }
+
+       &_time {
+           grid-area: time;
+       }
+
+       &_phone {
+           grid-area: phone;
+       }
+
+       &_email {
+           grid-area: email;
+       }
+    }
+
+    &__item-icon {
+        align-self: start;
+        margin-right: 45px;
+    }
+
+    &__item-name {
+        @include font(16px, bold, 0.1em, 16px);
+        text-transform: uppercase;
+        
+    }
+
+    &__item-data {
+        @include font(16px, 500, 0.01em, 23px, $text-secondary-light);
+        margin-top: 10px;
+    }
+}
