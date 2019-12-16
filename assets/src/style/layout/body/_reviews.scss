@@ -7,19 +7,24 @@
     &__grid {
     display: grid;
     grid-template-columns: minmax( 20px, 80px) 155px  minmax(400px, 820px) 155px minmax(20px, 190px);
-    grid-template-rows: 130px 50px 200px 155px 185px;
+    grid-template-rows: 130px 50px minmax(auto, 200px) auto minmax(100px, 185px);
     grid-template-areas:
         ". . . . ."
-        ". headline . . ."
+        ". headline headline-mobile . ."
         ". . commas . ."
         ". arrow-prev review-text arrow-next ."
-        ". . . . . ";
+        ". . arrows . . ";
     align-self: center;
     }
 
     &__headline {
         grid-area: headline;
-        @include font(36px, bold, 0.02em, 49px, $text-primary-dark)
+        @include font(36px, bold, 0.02em, 49px, $text-primary-dark);
+
+        @media(max-width: 745px) {
+            grid-area: headline-mobile;
+            justify-self: center;
+        }
     }
 
     &__commas {
@@ -50,6 +55,12 @@
     &__arrow_previous {
         grid-area: arrow-prev;
         justify-self: center;
+
+        @media(max-width: 640px) {
+            grid-area: arrows;
+            justify-self: center;
+            transform: translateX(-100%)
+        }
     }
 
     &__arrow_next {
@@ -57,6 +68,12 @@
         justify-self: center;
         align-self: start;
         transform: rotate(180deg);
+
+        @media(max-width: 640px) {
+            grid-area: arrows;
+            justify-self: center;
+            transform: rotate(180deg) translateX(-100%)
+        }
     }
 
     &__review {
@@ -71,6 +88,10 @@
         @include font(18px, normal, 0, 29px, $text-secondary-dark);
         padding: 0 40px;
         text-align: center;
+
+        @media(max-width: 110px) {
+            padding: 0;
+        }
     }
 
     &__review-name {

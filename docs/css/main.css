@@ -607,8 +607,8 @@ li {
   .reviews__grid {
     display: grid;
     grid-template-columns: minmax(20px, 80px) 155px minmax(400px, 820px) 155px minmax(20px, 190px);
-    grid-template-rows: 130px 50px 200px 155px 185px;
-    grid-template-areas: ". . . . ." ". headline . . ." ". . commas . ." ". arrow-prev review-text arrow-next ." ". . . . . ";
+    grid-template-rows: 130px 50px minmax(auto, 200px) auto minmax(100px, 185px);
+    grid-template-areas: ". . . . ." ". headline headline-mobile . ." ". . commas . ." ". arrow-prev review-text arrow-next ." ". . arrows . . ";
     align-self: center; }
   .reviews__headline {
     grid-area: headline;
@@ -617,6 +617,10 @@ li {
     letter-spacing: 0.02em;
     line-height: 49px;
     color: #251D1D; }
+    @media (max-width: 745px) {
+      .reviews__headline {
+        grid-area: headline-mobile;
+        justify-self: center; } }
   .reviews__commas {
     grid-area: commas;
     justify-self: center;
@@ -642,12 +646,24 @@ li {
   .reviews__arrow_previous {
     grid-area: arrow-prev;
     justify-self: center; }
+    @media (max-width: 640px) {
+      .reviews__arrow_previous {
+        grid-area: arrows;
+        justify-self: center;
+        -webkit-transform: translateX(-100%);
+                transform: translateX(-100%); } }
   .reviews__arrow_next {
     grid-area: arrow-next;
     justify-self: center;
     align-self: start;
     -webkit-transform: rotate(180deg);
             transform: rotate(180deg); }
+    @media (max-width: 640px) {
+      .reviews__arrow_next {
+        grid-area: arrows;
+        justify-self: center;
+        -webkit-transform: rotate(180deg) translateX(-100%);
+                transform: rotate(180deg) translateX(-100%); } }
   .reviews__review {
     grid-area: review-text;
     display: -webkit-box;
@@ -666,6 +682,9 @@ li {
     color: #5B5050;
     padding: 0 40px;
     text-align: center; }
+    @media (max-width: 110px) {
+      .reviews__review-text {
+        padding: 0; } }
   .reviews__review-name {
     font-size: 20px;
     font-weight: 600;

@@ -7,16 +7,18 @@ const arrows = document.querySelectorAll('.reviews__arrow');
 const header = document.querySelector('.header');
 const hamburgerCheckbox = document.getElementById("menu__toggle");
 const main = document.querySelector(".main");
+const reviews = document.querySelectorAll('.reviews__review');
 
 let activeItem = listItem[0]; //The active selection by default is the first one
 let activeDescription = servicesDescription[0];
 activeDescription.style.visibility = "visible" //The active description by default is the first one
 let activeReviewId = 1;
-let activeReview = document.getElementById(activeReviewId); //The visible review by default is the firest one.
+let activeReview = document.getElementById(activeReviewId); //The visible review by default is the first one.
 activeReview.style.visibility = "visible";
 let mapsInitialized = false;
+let x0 = null; //The first point of touch event.
 
-function onChangeSelect(e){
+function onChangeSelect(e){ //Here we change the background and add class "active" to a current selected option.
     services.style.background = `url('./img/services/${e.target.dataset.name}.jpg') 0% 0% / cover no-repeat`;
     activeItem.classList.remove('services__list-item_active')
     this.classList.add('services__list-item_active')
@@ -24,7 +26,7 @@ function onChangeSelect(e){
     changeDescription();
 }
 
-const changeDescription = () => {
+function changeDescription() {  //Also changing the description to match the selected service option.
     activeDescription.style.visibility = "hidden";
     servicesDescription.forEach(item => {
         if(item.dataset.name === activeItem.dataset.name) {
@@ -39,8 +41,12 @@ const changeDescription = () => {
     activeDescription.style.visibility = "visible";
  }
 
- const flipReview = e => {
-     e.target.dataset.name === "arrow-next" ? activeReviewId++ : activeReviewId--;
+ function arrowSelect(e) {
+     e.target.dataset.name === "arrow-next" ? flipReview(activeReviewId++) : 
+                                                flipReview(activeReviewId--);
+ }
+
+ function flipReview() {
      if (activeReviewId < 1) activeReviewId = 5;
      if (activeReviewId > 5) activeReviewId = 1;
      activeReview.style.visibility = "hidden";
@@ -48,7 +54,7 @@ const changeDescription = () => {
      activeReview.style.visibility = "visible";
  }
 
-const initMap = () => {
+ function initMap() {   //Adding Yandex maps.
     const myMap = new ymaps.Map("map", {
         center: [51.76595957, 36.22226938],
         zoom: 17
@@ -64,7 +70,7 @@ const initMap = () => {
     myMap.geoObjects.add(myGeoObject);
 }
 
-const throttle = (func, delay) => {
+function throttle(func, delay) {   //Throttle for the mouse event.
     let inThrottle;
     return function() {
         if(!inThrottle) {
@@ -75,7 +81,7 @@ const throttle = (func, delay) => {
     }
 }
 
-const checkHeader = () => {
+function checkHeader() {    //After some scrolling we make the header sticky and after some more scrolling we render it in view. 2 steps needed in order to set the transformation property for the transition.
     let scrollPosition = Math.round(window.scrollY);
     if (scrollPosition >= 400) {
         header.classList.add('header_sticky');
@@ -95,16 +101,37 @@ const checkHeader = () => {
 
 const throttledCheck = throttle(checkHeader, 50);
 
-const closeHamburgerMenu = () => {
+function closeHamburgerMenu() { //This function is for closing the hamburger menu if it's open by clocking anywhere within the window.
     if(hamburgerCheckbox.checked) hamburgerCheckbox.checked = false;
 }
 
 
+function lock(e) { //remembering the first point of the touchevent.
+    e.preventDefault();
+    x0 = e.changedTouches[0].clientX;
+}
+
+function move(e) { //calculating the difference between the first and the last point of the touch event. And change the review accorfingly.
+    e.preventDefault();
+    if(x0 || x0 === 0) {
+        let diff = e.changedTouches[0].clientX - x0;
+        if (diff < 0) {
+            flipReview(activeReviewId++);
+        } else { 
+            flipReview(activeReviewId--);
+        }
+        diff = null;
+    }
+}
 
 listItem.forEach(item => item.addEventListener('click', onChangeSelect));
-arrows.forEach(item => item.addEventListener('click', flipReview));
+arrows.forEach(item => item.addEventListener('click', arrowSelect));
 window.addEventListener('scroll', throttledCheck);
 main.addEventListener('click', closeHamburgerMenu)
-
+reviews.forEach(review => {
+    review.addEventListener('touchstart', lock);
+    review.addEventListener('touchend', move);
+}
+    );
 
 
