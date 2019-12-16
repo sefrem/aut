@@ -284,12 +284,16 @@ li {
   display: -webkit-box;
   display: flex;
   -webkit-box-pack: center;
-          justify-content: center; }
+          justify-content: center;
+  margin-bottom: 180px; }
   @media (max-width: 1200px) {
     .hero {
       background: -webkit-gradient(linear, left top, left bottom, color-stop(10.33%, #E21C2E), to(rgba(226, 28, 46, 0.7))), url(../img/hero-background-md.jpg) center center no-repeat;
       background: linear-gradient(180deg, #E21C2E 10.33%, rgba(226, 28, 46, 0.7) 100%), url(../img/hero-background-md.jpg) center center no-repeat;
       background-size: cover; } }
+  @media (max-width: 899px) {
+    .hero {
+      margin-bottom: 0; } }
   .hero__header {
     font-size: 48px;
     font-weight: bold;
@@ -334,10 +338,9 @@ li {
     background-image: linear-gradient(0deg, rgba(26, 26, 26, 0.7), rgba(26, 26, 26, 0.7)), radial-gradient(circle at 100% -50%, rgba(226, 28, 46, 0.2) 0%, rgba(0, 0, 0, 0.088) 100%), radial-gradient(circle at 50.07% 43.38%, rgba(26, 26, 26, 0.5) 0%, rgba(26, 26, 26, 0.2) 100%); }
   .services__grid {
     display: grid;
-    grid-template-columns: 80px 255px minmax(20px, 170px) minmax(300px, 775px) minmax(20px, 125px);
-    grid-template-rows: 180px 120px 320px auto;
+    grid-template-columns: minmax(0, 80px) 255px minmax(20px, 170px) minmax(300px, 775px) minmax(20px, 125px);
+    grid-template-rows: 180px 120px auto minmax(260px, auto);
     grid-template-areas: ". header . . ." ". . . . ." ". services . description ." ". . . contact .";
-    height: 880px;
     align-self: center; }
   .services__header {
     font-size: 36px;
@@ -505,6 +508,13 @@ li {
             flex-direction: row;
     max-width: 1400px;
     justify-content: space-around; }
+    @media (max-width: 1155px) {
+      .advantages__content-wrapper {
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+                flex-direction: column;
+        -webkit-box-align: center;
+                align-items: center; } }
   .advantages__header {
     display: -webkit-box;
     display: flex;
@@ -519,7 +529,8 @@ li {
     letter-spacing: 0.02em;
     line-height: 46px;
     color: #FFFFFF;
-    align-self: center; }
+    align-self: center;
+    max-width: 200px; }
   .advantages__quantity {
     font-size: 382px;
     font-weight: 800;
@@ -539,10 +550,12 @@ li {
     -webkit-box-direction: normal;
             flex-flow: row wrap;
     justify-content: space-around;
-    align-content: space-between;
     flex-basis: 710px;
-    height: 470px;
     align-self: center; }
+    @media (max-width: 1155px) {
+      .advantages__list {
+        flex-basis: 0;
+        margin-bottom: 50px; } }
   .advantages__list-item {
     display: -webkit-box;
     display: flex;
@@ -554,7 +567,12 @@ li {
     -webkit-box-pack: justify;
             justify-content: space-between;
     -webkit-box-align: center;
-            align-items: center; }
+            align-items: center;
+    margin: 35px 0; }
+    @media (max-width: 1155px) {
+      .advantages__list-item {
+        margin: 20px 0;
+        height: 180px; } }
   .advantages__list-icon {
     display: -webkit-box;
     display: flex;

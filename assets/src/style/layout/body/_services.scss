@@ -24,14 +24,13 @@
 
 &__grid {
     display: grid;
-    grid-template-columns: 80px 255px minmax(20px, 170px) minmax(300px, 775px) minmax(20px, 125px);
-    grid-template-rows: 180px 120px 320px auto ;
+    grid-template-columns: minmax(0, 80px) 255px minmax(20px, 170px) minmax(300px, 775px) minmax(20px, 125px);
+    grid-template-rows: 180px 120px auto minmax(260px, auto);
     grid-template-areas: 
         ". header . . ."
         ". . . . ."
         ". services . description ."
         ". . . contact .";
-    height: 880px;
     align-self: center;
 }
 
