@@ -50,6 +50,14 @@
                             fill: white;
                         }
         }
+        @media (hover: none) {
+            background: white;
+            border-color: black;
+                    .reviews__arrow-icon-path {
+                        fill: black;
+                    }
+
+        }
     }
 
     &__arrow_previous {

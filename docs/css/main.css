@@ -648,6 +648,12 @@ li {
       cursor: pointer; }
       .reviews__arrow:hover .reviews__arrow-icon-path {
         fill: white; }
+    @media (hover: none) {
+      .reviews__arrow {
+        background: white;
+        border-color: black; }
+        .reviews__arrow .reviews__arrow-icon-path {
+          fill: black; } }
   .reviews__arrow_previous {
     grid-area: arrow-prev;
     justify-self: center; }
