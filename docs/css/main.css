@@ -512,7 +512,7 @@ li {
     -webkit-box-orient: horizontal;
     -webkit-box-direction: normal;
             flex-direction: row;
-    max-width: 1400px;
+    width: 1400px;
     justify-content: space-around; }
     @media (max-width: 1155px) {
       .advantages__content-wrapper {
@@ -556,7 +556,7 @@ li {
     -webkit-box-direction: normal;
             flex-flow: row wrap;
     justify-content: space-around;
-    flex-basis: 710px;
+    max-width: 710px;
     align-self: center; }
     @media (max-width: 1155px) {
       .advantages__list {
