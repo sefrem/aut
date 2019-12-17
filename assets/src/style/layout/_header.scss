@@ -87,7 +87,7 @@
     }
 
     &_sticky {
-        @media(min-width: $tablet-width) {
+        
         position: sticky;
         top: 0px;
         z-index: 99;
@@ -107,15 +107,15 @@
             border: none;
             animation: pulse 2s infinite;
         }    
-        }
+        
     }
 
     &_sticky-inView {
-        @media(min-width: $tablet-width) {
+        
             padding: 5px 80px;
             transform: translateY(0);
             transition: transform .35s ease-out;
-        }
+        
     }
 }
 

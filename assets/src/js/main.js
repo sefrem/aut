@@ -82,6 +82,7 @@ function throttle(func, delay) {   //Throttle for the mouse event.
 }
 
 function checkHeader() {    //After some scrolling we make the header sticky and after some more scrolling we render it in view. 2 steps needed in order to set the transformation property for the transition.
+    if(window.innerWidth <= 1200) return  //Don't apply these classes for smaller screens at all
     let scrollPosition = Math.round(window.scrollY);
     if (scrollPosition >= 400) {
         header.classList.add('header_sticky');
