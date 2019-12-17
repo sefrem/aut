@@ -560,7 +560,6 @@ li {
     align-self: center; }
     @media (max-width: 1155px) {
       .advantages__list {
-        flex-basis: 0;
         margin-bottom: 50px; } }
   .advantages__list-item {
     display: -webkit-box;
