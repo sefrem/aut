@@ -648,10 +648,10 @@ li {
       cursor: pointer; }
       .reviews__arrow:hover .reviews__arrow-icon-path {
         fill: white; }
-    @media (hover: none) {
+    @media (pointer: coarse) {
       .reviews__arrow {
         background: white;
-        border-color: black; }
+        border-color: yellowgreen; }
         .reviews__arrow .reviews__arrow-icon-path {
           fill: black; } }
   .reviews__arrow_previous {

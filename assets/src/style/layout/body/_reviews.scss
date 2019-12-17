@@ -50,9 +50,9 @@
                             fill: white;
                         }
         }
-        @media (hover: none) {
+        @media (pointer: coarse) {
             background: white;
-            border-color: black;
+            border-color: yellowgreen;
                     .reviews__arrow-icon-path {
                         fill: black;
                     }
