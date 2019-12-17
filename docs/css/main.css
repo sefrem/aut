@@ -409,6 +409,22 @@ li {
     color: #FFFFFF;
     align-self: center; }
 
+.services_accordion__checkbox {
+  display: none; }
+
+.services_accordion__content {
+  overflow-y: hidden;
+  height: 0;
+  -webkit-transition: height 1s ease-out;
+  transition: height 1s ease-out; }
+
+.services_accordion__checkbox:checked ~ .services_accordion__content {
+  height: auto;
+  overflow: visible; }
+
+.services_accordion label {
+  display: block; }
+
 .about {
   display: -webkit-box;
   display: flex; }

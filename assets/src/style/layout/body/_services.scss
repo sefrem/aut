@@ -10,8 +10,6 @@
 
 }
 
-//https://codepen.io/markcaron/pen/RVvmaz
-
 .services {
     background: url(../img/services/alignment.jpg); // The first service is selected by default so it's background is default            
     
@@ -98,4 +96,25 @@ justify-content: space-around;
     @include font(18px, bold, 0.02em, 25px);
     align-self: center;
 }
+}
+
+.services_accordion {
+    &__checkbox {
+        display: none;
+    }
+
+    &__content {
+        overflow-y: hidden;
+        height: 0;
+        transition: height 1s ease-out;
+    }
+
+    &__checkbox:checked~ &__content {
+        height: auto;
+        overflow: visible;
+    }
+
+    & label {
+        display: block;
+    }
 }
