@@ -10,6 +10,7 @@ const main = document.querySelector(".main");
 const reviews = document.querySelectorAll('.reviews__review');
 
 let activeItem = listItem[0]; //The active selection by default is the first one
+let prevActiveitem;
 let activeDescription = servicesDescription[0];
 activeDescription.style.visibility = "visible" //The active description by default is the first one
 let activeReviewId = 1;
@@ -19,10 +20,11 @@ let mapsInitialized = false;
 let x0 = null; //The first point of touch event.
 
 function onChangeSelect(e){ //Here we change the background and add class "active" to a current selected option.
+    
     services.style.background = `url('./img/services/${e.target.dataset.name}.jpg') center center / cover no-repeat`;
-
     activeItem.classList.remove('services__list-item_active')
-    this.classList.add('services__list-item_active')
+    this.classList.add('services__list-item_active');
+    prevActiveitem = activeItem;
     activeItem = this;
     changeDescription();
 }
@@ -35,7 +37,8 @@ function changeDescription() {  //Also changing the description to match the sel
         }
         if(activeItem.dataset.name === "carWash") {
             contactPhone.innerHTML = "8 (905) 042-3355";
-        } else {
+        }
+         if(prevActiveitem.dataset.name === "carWash"){
             contactPhone.innerHTML = "8 (951) 313-2122"
         }
     });

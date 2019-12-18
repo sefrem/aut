@@ -1,5 +1,5 @@
 .preload-background-images {    // Preloading background images for the services section
-    // display: none;
+    @media(min-width: 768px) {
     background: url(../img/services/tireFix.jpg),
                 url(../img/services/carpet.jpg),
                 url(../img/services/carWash.jpg),
@@ -7,12 +7,14 @@
                 url(../img/services/dryCleaning.jpg),
                 url(../img/services/headlights.jpg),
                 url(../img/services/welding.jpg);
-
+    }
 }
 
 .services {
     background: url(../img/services/alignment.jpg) center center / cover no-repeat; // The first service is selected by default so it's background is default            
-   
+   @media(max-width: 767px) {
+       display: none;
+   }
 
 &__wrapper {
     display: flex;
@@ -106,87 +108,99 @@ justify-content: space-around;
 }
 
 .services-accordion {
+    display: none;
+    @media(max-width: 767px) {
+        display: flex;
+        flex-direction: column;
+    }
     background: linear-gradient(358.86deg, #050304 -5.74%, rgba(215, 215, 215, 0.2) 325.43%), 
                 linear-gradient(0deg, #050304, #050304);
+
+    &__header {
+        @include font(24px, bold, 0.02em, 24px);
+        align-self: center;
+        margin: 30px 0 35px;
+    }
+
+    &__service {
+        border-bottom: 1px solid #484848;
+    }
     
     &__checkbox {
         display: none;
     }
+
     &__content {
         overflow-y: hidden;
         height: 0;
         transition: height 1s ease-out;
     }
 
-    &__checkbox:checked~ &__content {
+    &__checkbox:checked~ &__content { //Here we select a sibiling selector of the checked box, with the class Content
         height: auto;
         overflow: visible;
         padding: 15px 10px;
+    }
+
+    &__checkbox:checked~ &__name &__arrow { //Similarly, here we select a sibling label to the checked box and then select it's child arrow
+        transform: rotate(180deg);
     }
 
     &__name {
         display: block;
         padding: 15px 0 15px 10px;
         @include font(16px, 500, 0, 19px);
+
+        display: flex;
+        justify-content: space-between;
        
+    }
+
+    &__arrow {
+        margin-right: 10px;
+        
     }
 
         &__content {
             @include font(14px, normal, 0, 22px, $text-secondary-light);
             
             &_alignment {
-                background: linear-gradient(0deg, rgba(26, 26, 26, 0.7), rgba(26, 26, 26, 0.7)), 
-                radial-gradient(117.69% 47.91% at 50.07% 43.38%, rgba(26, 26, 26, 0.5) 0%, rgba(26, 26, 26, 0.2) 100%), 
-                radial-gradient(226.33% 656.26% at 100% -1.1%, rgba(226, 28, 46, 0.2) 0%, rgba(0, 0, 0, 0.088) 100%),
+                background: $services-background-gradient,
                 url(../img/services/alignment-md.jpg) center center / cover no-repeat;
             }
 
             &_tireFix {
-                background: linear-gradient(0deg, rgba(26, 26, 26, 0.7), rgba(26, 26, 26, 0.7)), 
-                radial-gradient(117.69% 47.91% at 50.07% 43.38%, rgba(26, 26, 26, 0.5) 0%, rgba(26, 26, 26, 0.2) 100%), 
-                radial-gradient(226.33% 656.26% at 100% -1.1%, rgba(226, 28, 46, 0.2) 0%, rgba(0, 0, 0, 0.088) 100%),
+                background: $services-background-gradient,
                 url(../img/services/tireFix-md.jpg) center center / cover no-repeat;
             }
 
             &_carWash {
-                background: linear-gradient(0deg, rgba(26, 26, 26, 0.7), rgba(26, 26, 26, 0.7)), 
-                radial-gradient(117.69% 47.91% at 50.07% 43.38%, rgba(26, 26, 26, 0.5) 0%, rgba(26, 26, 26, 0.2) 100%), 
-                radial-gradient(226.33% 656.26% at 100% -1.1%, rgba(226, 28, 46, 0.2) 0%, rgba(0, 0, 0, 0.088) 100%),
+                background: $services-background-gradient,
                 url(../img/services/carWash-md.jpg) center center / cover no-repeat;
             }
 
             &_welding {
-                background: linear-gradient(0deg, rgba(26, 26, 26, 0.7), rgba(26, 26, 26, 0.7)), 
-                radial-gradient(117.69% 47.91% at 50.07% 43.38%, rgba(26, 26, 26, 0.5) 0%, rgba(26, 26, 26, 0.2) 100%), 
-                radial-gradient(226.33% 656.26% at 100% -1.1%, rgba(226, 28, 46, 0.2) 0%, rgba(0, 0, 0, 0.088) 100%),
+                background: $services-background-gradient,
                 url(../img/services/welding-md.jpg) center center / cover no-repeat;
             }
             
             &_headlights {
-                background: linear-gradient(0deg, rgba(26, 26, 26, 0.7), rgba(26, 26, 26, 0.7)), 
-                radial-gradient(117.69% 47.91% at 50.07% 43.38%, rgba(26, 26, 26, 0.5) 0%, rgba(26, 26, 26, 0.2) 100%), 
-                radial-gradient(226.33% 656.26% at 100% -1.1%, rgba(226, 28, 46, 0.2) 0%, rgba(0, 0, 0, 0.088) 100%),
+                background: $services-background-gradient,
                 url(../img/services/headlights-md.jpg) center center / cover no-repeat;
             }
 
             &_castWheels {
-                background: linear-gradient(0deg, rgba(26, 26, 26, 0.7), rgba(26, 26, 26, 0.7)), 
-                radial-gradient(117.69% 47.91% at 50.07% 43.38%, rgba(26, 26, 26, 0.5) 0%, rgba(26, 26, 26, 0.2) 100%), 
-                radial-gradient(226.33% 656.26% at 100% -1.1%, rgba(226, 28, 46, 0.2) 0%, rgba(0, 0, 0, 0.088) 100%),
+                background: $services-background-gradient,
                 url(../img/services/castWheels-md.jpg) center center / cover no-repeat;
             }
 
             &_carpet {
-                background: linear-gradient(0deg, rgba(26, 26, 26, 0.7), rgba(26, 26, 26, 0.7)), 
-                radial-gradient(117.69% 47.91% at 50.07% 43.38%, rgba(26, 26, 26, 0.5) 0%, rgba(26, 26, 26, 0.2) 100%), 
-                radial-gradient(226.33% 656.26% at 100% -1.1%, rgba(226, 28, 46, 0.2) 0%, rgba(0, 0, 0, 0.088) 100%),
+                background: $services-background-gradient,
                 url(../img/services/carpet-md.jpg) center center / cover no-repeat;
             }
 
             &_dryCleaning {
-                background: linear-gradient(0deg, rgba(26, 26, 26, 0.7), rgba(26, 26, 26, 0.7)), 
-                radial-gradient(117.69% 47.91% at 50.07% 43.38%, rgba(26, 26, 26, 0.5) 0%, rgba(26, 26, 26, 0.2) 100%), 
-                radial-gradient(226.33% 656.26% at 100% -1.1%, rgba(226, 28, 46, 0.2) 0%, rgba(0, 0, 0, 0.088) 100%),
+                background: $services-background-gradient,
                 url(../img/services/dryCleaning-md.jpg) center center / cover no-repeat;
             }
         }
@@ -205,10 +219,10 @@ justify-content: space-around;
         }
 
         &__info {
-            @include font(12px, normal, 0, 19px);
+            @include font(14px, normal, 0, 19px);
         }
 
         &__phone {
-            @include font(14px, bold, 0.02em, 19px);
+            @include font(16px, bold, 0.02em, 19px);
         }
 }

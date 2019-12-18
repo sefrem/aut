@@ -321,11 +321,15 @@ li {
       .hero__hero-image {
         top: 335px; } }
 
-.preload-background-images {
-  background: url(../img/services/tireFix.jpg), url(../img/services/carpet.jpg), url(../img/services/carWash.jpg), url(../img/services/castWheels.jpg), url(../img/services/dryCleaning.jpg), url(../img/services/headlights.jpg), url(../img/services/welding.jpg); }
+@media (min-width: 768px) {
+  .preload-background-images {
+    background: url(../img/services/tireFix.jpg), url(../img/services/carpet.jpg), url(../img/services/carWash.jpg), url(../img/services/castWheels.jpg), url(../img/services/dryCleaning.jpg), url(../img/services/headlights.jpg), url(../img/services/welding.jpg); } }
 
 .services {
   background: url(../img/services/alignment.jpg) center center/cover no-repeat; }
+  @media (max-width: 767px) {
+    .services {
+      display: none; } }
   .services__wrapper {
     display: -webkit-box;
     display: flex;
@@ -414,7 +418,25 @@ li {
     align-self: center; }
 
 .services-accordion {
+  display: none;
   background: linear-gradient(358.86deg, #050304 -5.74%, rgba(215, 215, 215, 0.2) 325.43%), linear-gradient(0deg, #050304, #050304); }
+  @media (max-width: 767px) {
+    .services-accordion {
+      display: -webkit-box;
+      display: flex;
+      -webkit-box-orient: vertical;
+      -webkit-box-direction: normal;
+              flex-direction: column; } }
+  .services-accordion__header {
+    font-size: 24px;
+    font-weight: bold;
+    letter-spacing: 0.02em;
+    line-height: 24px;
+    color: #FFFFFF;
+    align-self: center;
+    margin: 30px 0 35px; }
+  .services-accordion__service {
+    border-bottom: 1px solid #484848; }
   .services-accordion__checkbox {
     display: none; }
   .services-accordion__content {
@@ -426,6 +448,9 @@ li {
     height: auto;
     overflow: visible;
     padding: 15px 10px; }
+  .services-accordion__checkbox:checked ~ .services-accordion__name .services-accordion__arrow {
+    -webkit-transform: rotate(180deg);
+            transform: rotate(180deg); }
   .services-accordion__name {
     display: block;
     padding: 15px 0 15px 10px;
@@ -433,7 +458,13 @@ li {
     font-weight: 500;
     letter-spacing: 0;
     line-height: 19px;
-    color: #FFFFFF; }
+    color: #FFFFFF;
+    display: -webkit-box;
+    display: flex;
+    -webkit-box-pack: justify;
+            justify-content: space-between; }
+  .services-accordion__arrow {
+    margin-right: 10px; }
   .services-accordion__content {
     font-size: 14px;
     font-weight: normal;
@@ -480,13 +511,13 @@ li {
     -webkit-box-align: center;
             align-items: center; }
   .services-accordion__info {
-    font-size: 12px;
+    font-size: 14px;
     font-weight: normal;
     letter-spacing: 0;
     line-height: 19px;
     color: #FFFFFF; }
   .services-accordion__phone {
-    font-size: 14px;
+    font-size: 16px;
     font-weight: bold;
     letter-spacing: 0.02em;
     line-height: 19px;
