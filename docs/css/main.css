@@ -325,7 +325,7 @@ li {
   background: url(../img/services/tireFix.jpg), url(../img/services/carpet.jpg), url(../img/services/carWash.jpg), url(../img/services/castWheels.jpg), url(../img/services/dryCleaning.jpg), url(../img/services/headlights.jpg), url(../img/services/welding.jpg); }
 
 .services {
-  background: url(../img/services/alignment.jpg); }
+  background: url(../img/services/alignment.jpg) center center/cover no-repeat; }
   .services__wrapper {
     display: -webkit-box;
     display: flex;
@@ -394,6 +394,10 @@ li {
   background: linear-gradient(118deg, white 58%, #e21c2e 58.25%);
   border-radius: 20px;
   justify-content: space-around; }
+  @media (max-width: 1050px) {
+    .contact {
+      grid-column: 3 / 5;
+      grid-row-start: 4; } }
   .contact__info {
     font-size: 16px;
     font-weight: normal;
@@ -409,21 +413,84 @@ li {
     color: #FFFFFF;
     align-self: center; }
 
-.services_accordion__checkbox {
-  display: none; }
-
-.services_accordion__content {
-  overflow-y: hidden;
-  height: 0;
-  -webkit-transition: height 1s ease-out;
-  transition: height 1s ease-out; }
-
-.services_accordion__checkbox:checked ~ .services_accordion__content {
-  height: auto;
-  overflow: visible; }
-
-.services_accordion label {
-  display: block; }
+.services-accordion {
+  background: linear-gradient(358.86deg, #050304 -5.74%, rgba(215, 215, 215, 0.2) 325.43%), linear-gradient(0deg, #050304, #050304); }
+  .services-accordion__checkbox {
+    display: none; }
+  .services-accordion__content {
+    overflow-y: hidden;
+    height: 0;
+    -webkit-transition: height 1s ease-out;
+    transition: height 1s ease-out; }
+  .services-accordion__checkbox:checked ~ .services-accordion__content {
+    height: auto;
+    overflow: visible;
+    padding: 15px 10px; }
+  .services-accordion__name {
+    display: block;
+    padding: 15px 0 15px 10px;
+    font-size: 16px;
+    font-weight: 500;
+    letter-spacing: 0;
+    line-height: 19px;
+    color: #FFFFFF; }
+  .services-accordion__content {
+    font-size: 14px;
+    font-weight: normal;
+    letter-spacing: 0;
+    line-height: 22px;
+    color: #DFDFDF; }
+    .services-accordion__content_alignment {
+      background: -webkit-gradient(linear, left bottom, left top, from(rgba(26, 26, 26, 0.7)), to(rgba(26, 26, 26, 0.7))), radial-gradient(117.69% 47.91% at 50.07% 43.38%, rgba(26, 26, 26, 0.5) 0%, rgba(26, 26, 26, 0.2) 100%), radial-gradient(226.33% 656.26% at 100% -1.1%, rgba(226, 28, 46, 0.2) 0%, rgba(0, 0, 0, 0.088) 100%), url(../img/services/alignment-md.jpg) center center/cover no-repeat;
+      background: linear-gradient(0deg, rgba(26, 26, 26, 0.7), rgba(26, 26, 26, 0.7)), radial-gradient(117.69% 47.91% at 50.07% 43.38%, rgba(26, 26, 26, 0.5) 0%, rgba(26, 26, 26, 0.2) 100%), radial-gradient(226.33% 656.26% at 100% -1.1%, rgba(226, 28, 46, 0.2) 0%, rgba(0, 0, 0, 0.088) 100%), url(../img/services/alignment-md.jpg) center center/cover no-repeat; }
+    .services-accordion__content_tireFix {
+      background: -webkit-gradient(linear, left bottom, left top, from(rgba(26, 26, 26, 0.7)), to(rgba(26, 26, 26, 0.7))), radial-gradient(117.69% 47.91% at 50.07% 43.38%, rgba(26, 26, 26, 0.5) 0%, rgba(26, 26, 26, 0.2) 100%), radial-gradient(226.33% 656.26% at 100% -1.1%, rgba(226, 28, 46, 0.2) 0%, rgba(0, 0, 0, 0.088) 100%), url(../img/services/tireFix-md.jpg) center center/cover no-repeat;
+      background: linear-gradient(0deg, rgba(26, 26, 26, 0.7), rgba(26, 26, 26, 0.7)), radial-gradient(117.69% 47.91% at 50.07% 43.38%, rgba(26, 26, 26, 0.5) 0%, rgba(26, 26, 26, 0.2) 100%), radial-gradient(226.33% 656.26% at 100% -1.1%, rgba(226, 28, 46, 0.2) 0%, rgba(0, 0, 0, 0.088) 100%), url(../img/services/tireFix-md.jpg) center center/cover no-repeat; }
+    .services-accordion__content_carWash {
+      background: -webkit-gradient(linear, left bottom, left top, from(rgba(26, 26, 26, 0.7)), to(rgba(26, 26, 26, 0.7))), radial-gradient(117.69% 47.91% at 50.07% 43.38%, rgba(26, 26, 26, 0.5) 0%, rgba(26, 26, 26, 0.2) 100%), radial-gradient(226.33% 656.26% at 100% -1.1%, rgba(226, 28, 46, 0.2) 0%, rgba(0, 0, 0, 0.088) 100%), url(../img/services/carWash-md.jpg) center center/cover no-repeat;
+      background: linear-gradient(0deg, rgba(26, 26, 26, 0.7), rgba(26, 26, 26, 0.7)), radial-gradient(117.69% 47.91% at 50.07% 43.38%, rgba(26, 26, 26, 0.5) 0%, rgba(26, 26, 26, 0.2) 100%), radial-gradient(226.33% 656.26% at 100% -1.1%, rgba(226, 28, 46, 0.2) 0%, rgba(0, 0, 0, 0.088) 100%), url(../img/services/carWash-md.jpg) center center/cover no-repeat; }
+    .services-accordion__content_welding {
+      background: -webkit-gradient(linear, left bottom, left top, from(rgba(26, 26, 26, 0.7)), to(rgba(26, 26, 26, 0.7))), radial-gradient(117.69% 47.91% at 50.07% 43.38%, rgba(26, 26, 26, 0.5) 0%, rgba(26, 26, 26, 0.2) 100%), radial-gradient(226.33% 656.26% at 100% -1.1%, rgba(226, 28, 46, 0.2) 0%, rgba(0, 0, 0, 0.088) 100%), url(../img/services/welding-md.jpg) center center/cover no-repeat;
+      background: linear-gradient(0deg, rgba(26, 26, 26, 0.7), rgba(26, 26, 26, 0.7)), radial-gradient(117.69% 47.91% at 50.07% 43.38%, rgba(26, 26, 26, 0.5) 0%, rgba(26, 26, 26, 0.2) 100%), radial-gradient(226.33% 656.26% at 100% -1.1%, rgba(226, 28, 46, 0.2) 0%, rgba(0, 0, 0, 0.088) 100%), url(../img/services/welding-md.jpg) center center/cover no-repeat; }
+    .services-accordion__content_headlights {
+      background: -webkit-gradient(linear, left bottom, left top, from(rgba(26, 26, 26, 0.7)), to(rgba(26, 26, 26, 0.7))), radial-gradient(117.69% 47.91% at 50.07% 43.38%, rgba(26, 26, 26, 0.5) 0%, rgba(26, 26, 26, 0.2) 100%), radial-gradient(226.33% 656.26% at 100% -1.1%, rgba(226, 28, 46, 0.2) 0%, rgba(0, 0, 0, 0.088) 100%), url(../img/services/headlights-md.jpg) center center/cover no-repeat;
+      background: linear-gradient(0deg, rgba(26, 26, 26, 0.7), rgba(26, 26, 26, 0.7)), radial-gradient(117.69% 47.91% at 50.07% 43.38%, rgba(26, 26, 26, 0.5) 0%, rgba(26, 26, 26, 0.2) 100%), radial-gradient(226.33% 656.26% at 100% -1.1%, rgba(226, 28, 46, 0.2) 0%, rgba(0, 0, 0, 0.088) 100%), url(../img/services/headlights-md.jpg) center center/cover no-repeat; }
+    .services-accordion__content_castWheels {
+      background: -webkit-gradient(linear, left bottom, left top, from(rgba(26, 26, 26, 0.7)), to(rgba(26, 26, 26, 0.7))), radial-gradient(117.69% 47.91% at 50.07% 43.38%, rgba(26, 26, 26, 0.5) 0%, rgba(26, 26, 26, 0.2) 100%), radial-gradient(226.33% 656.26% at 100% -1.1%, rgba(226, 28, 46, 0.2) 0%, rgba(0, 0, 0, 0.088) 100%), url(../img/services/castWheels-md.jpg) center center/cover no-repeat;
+      background: linear-gradient(0deg, rgba(26, 26, 26, 0.7), rgba(26, 26, 26, 0.7)), radial-gradient(117.69% 47.91% at 50.07% 43.38%, rgba(26, 26, 26, 0.5) 0%, rgba(26, 26, 26, 0.2) 100%), radial-gradient(226.33% 656.26% at 100% -1.1%, rgba(226, 28, 46, 0.2) 0%, rgba(0, 0, 0, 0.088) 100%), url(../img/services/castWheels-md.jpg) center center/cover no-repeat; }
+    .services-accordion__content_carpet {
+      background: -webkit-gradient(linear, left bottom, left top, from(rgba(26, 26, 26, 0.7)), to(rgba(26, 26, 26, 0.7))), radial-gradient(117.69% 47.91% at 50.07% 43.38%, rgba(26, 26, 26, 0.5) 0%, rgba(26, 26, 26, 0.2) 100%), radial-gradient(226.33% 656.26% at 100% -1.1%, rgba(226, 28, 46, 0.2) 0%, rgba(0, 0, 0, 0.088) 100%), url(../img/services/carpet-md.jpg) center center/cover no-repeat;
+      background: linear-gradient(0deg, rgba(26, 26, 26, 0.7), rgba(26, 26, 26, 0.7)), radial-gradient(117.69% 47.91% at 50.07% 43.38%, rgba(26, 26, 26, 0.5) 0%, rgba(26, 26, 26, 0.2) 100%), radial-gradient(226.33% 656.26% at 100% -1.1%, rgba(226, 28, 46, 0.2) 0%, rgba(0, 0, 0, 0.088) 100%), url(../img/services/carpet-md.jpg) center center/cover no-repeat; }
+    .services-accordion__content_dryCleaning {
+      background: -webkit-gradient(linear, left bottom, left top, from(rgba(26, 26, 26, 0.7)), to(rgba(26, 26, 26, 0.7))), radial-gradient(117.69% 47.91% at 50.07% 43.38%, rgba(26, 26, 26, 0.5) 0%, rgba(26, 26, 26, 0.2) 100%), radial-gradient(226.33% 656.26% at 100% -1.1%, rgba(226, 28, 46, 0.2) 0%, rgba(0, 0, 0, 0.088) 100%), url(../img/services/dryCleaning-md.jpg) center center/cover no-repeat;
+      background: linear-gradient(0deg, rgba(26, 26, 26, 0.7), rgba(26, 26, 26, 0.7)), radial-gradient(117.69% 47.91% at 50.07% 43.38%, rgba(26, 26, 26, 0.5) 0%, rgba(26, 26, 26, 0.2) 100%), radial-gradient(226.33% 656.26% at 100% -1.1%, rgba(226, 28, 46, 0.2) 0%, rgba(0, 0, 0, 0.088) 100%), url(../img/services/dryCleaning-md.jpg) center center/cover no-repeat; }
+  .services-accordion__contact {
+    width: 215px;
+    height: 50px;
+    margin: 30px auto 40px;
+    background: radial-gradient(48.75% 48.75% at 23.75% 21.25%, #FE394B 0%, rgba(254, 57, 75, 0) 100%), #E21C2E;
+    border-radius: 20px;
+    display: -webkit-box;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+            flex-direction: column;
+    -webkit-box-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+            align-items: center; }
+  .services-accordion__info {
+    font-size: 12px;
+    font-weight: normal;
+    letter-spacing: 0;
+    line-height: 19px;
+    color: #FFFFFF; }
+  .services-accordion__phone {
+    font-size: 14px;
+    font-weight: bold;
+    letter-spacing: 0.02em;
+    line-height: 19px;
+    color: #FFFFFF; }
 
 .about {
   display: -webkit-box;

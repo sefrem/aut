@@ -19,7 +19,8 @@ let mapsInitialized = false;
 let x0 = null; //The first point of touch event.
 
 function onChangeSelect(e){ //Here we change the background and add class "active" to a current selected option.
-    services.style.background = `url('./img/services/${e.target.dataset.name}.jpg') 0% 0% / cover no-repeat`;
+    services.style.background = `url('./img/services/${e.target.dataset.name}.jpg') center center / cover no-repeat`;
+
     activeItem.classList.remove('services__list-item_active')
     this.classList.add('services__list-item_active')
     activeItem = this;
