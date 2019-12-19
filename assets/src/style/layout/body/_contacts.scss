@@ -4,7 +4,15 @@
                 radial-gradient(circle at 50.07% 43.38%, rgba(26, 26, 26, 0.5) 0%, rgba(26, 26, 26, 0.2) 100%),
                 url('../img/tires.jpg') no-repeat;
     background-size: cover;
+   
 
+    @media(max-width: 767px) {
+        background: linear-gradient(0deg, rgba(26, 26, 26, 0.7), rgba(26, 26, 26, 0.7)), 
+                radial-gradient(circle at 100% -50%, rgba(226, 28, 46, 0.2) 0%, rgba(0, 0, 0, 0.088) 100%), 
+                radial-gradient(circle at 50.07% 43.38%, rgba(26, 26, 26, 0.5) 0%, rgba(26, 26, 26, 0.2) 100%),
+                url('../img/tires-md.jpg') no-repeat;
+        background-size: cover;      
+    }
    
     &__headline {
         @include font(36px, bold, 0.02em, 49px);
@@ -26,6 +34,10 @@
         display: flex;
         width: 815px;
         height: 525px;
+
+        @media(max-width: 650px) {
+            width: 100%;
+        }
     }
 
     &__contacts-wrapper {
