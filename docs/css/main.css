@@ -638,11 +638,16 @@ li {
   .advantages__header {
     display: -webkit-box;
     display: flex;
-    -webkit-box-orient: horizontal;
-    -webkit-box-direction: normal;
-            flex-direction: row;
     flex-basis: 515px;
     max-height: 397px; }
+    @media (max-width: 600px) {
+      .advantages__header {
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+                flex-direction: column;
+        max-height: none;
+        -webkit-box-align: center;
+                align-items: center; } }
   .advantages__headline {
     font-size: 34px;
     font-weight: 800;
@@ -651,6 +656,10 @@ li {
     color: #FFFFFF;
     align-self: center;
     max-width: 200px; }
+    @media (max-width: 600px) {
+      .advantages__headline {
+        max-width: 300px;
+        margin-top: -20px; } }
   .advantages__quantity {
     font-size: 382px;
     font-weight: 800;
@@ -846,13 +855,13 @@ li {
     letter-spacing: 0.02em;
     line-height: 49px;
     color: #FFFFFF;
-    padding-left: 330px; }
+    padding: 70px 120px; }
   .contacts__wrapper {
     display: -webkit-box;
     display: flex;
     -webkit-box-pack: center;
             justify-content: center;
-    padding: 160px 0; }
+    padding-bottom: 160px; }
     @media (max-width: 650px) {
       .contacts__wrapper {
         -webkit-box-orient: vertical;
