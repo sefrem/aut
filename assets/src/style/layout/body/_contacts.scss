@@ -4,29 +4,34 @@
                 radial-gradient(circle at 50.07% 43.38%, rgba(26, 26, 26, 0.5) 0%, rgba(26, 26, 26, 0.2) 100%),
                 url('../img/tires.jpg') no-repeat;
     background-size: cover;
-    height: 850px;
 
+   
     &__headline {
         @include font(36px, bold, 0.02em, 49px);
-        padding: 76px 0 69px 330px;
+        padding-left:330px;
         
     }
 
     &__wrapper {
         display: flex;
         justify-content: center;
+        padding: 160px 0;
+        @media(max-width: 650px) {
+            flex-direction: column;
+        }
+    
     }
 
     &__map {
         display: flex;
-        flex-basis: 815px;
+        width: 815px;
         height: 525px;
     }
 
     &__contacts-wrapper {
         display: grid;
         background: url(../img/back2.png);
-        grid-template-columns: 90px minmax(300px, 400px) 90px;
+        grid-template-columns: minmax(20px, 90px) minmax(300px, 400px) minmax(20px, 90px);
         grid-template-rows: 88px auto auto auto auto 88px;
         grid-template-areas: 
                 ". . ."

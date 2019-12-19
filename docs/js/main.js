@@ -16,7 +16,7 @@ activeDescription.style.visibility = "visible" //The active description by defau
 let activeReviewId = 1;
 let activeReview = document.getElementById(activeReviewId); //The visible review by default is the first one.
 activeReview.style.visibility = "visible";
-let mapsInitialized = false;
+let mapsInitialized =false;
 let x0 = null; //The first point of touch event.
 
 function onChangeSelect(e){ //Here we change the background and add class "active" to a current selected option.
@@ -86,14 +86,13 @@ function throttle(func, delay) {   //Throttle for the mouse event.
 }
 
 function checkHeader() {    //After some scrolling we make the header sticky and after some more scrolling we render it in view. 2 steps needed in order to set the transformation property for the transition.
-    if(window.innerWidth <= 1200) return  //Don't apply these classes for smaller screens at all
     let scrollPosition = Math.round(window.scrollY);
-    if (scrollPosition >= 400) {
+    if (scrollPosition >= 400 && window.innerWidth > 1200) {
         header.classList.add('header_sticky');
     } else {
         header.classList.remove('header_sticky');
     };
-    if (scrollPosition >= 801 ) {
+    if (scrollPosition >= 801 && window.innerWidth > 1200) {
         header.classList.add('header_sticky-inView')
     } else {
         header.classList.remove('header_sticky-inView');

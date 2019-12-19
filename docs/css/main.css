@@ -64,6 +64,9 @@ li {
   @media (max-width: 600px) {
     .header {
       padding-right: 40px; } }
+  @media (max-width: 450px) {
+    .header {
+      padding-right: 10px; } }
   @media (max-width: 1200px) {
     .header {
       -webkit-box-pack: center;
@@ -101,11 +104,6 @@ li {
     display: flex;
     -webkit-box-pack: justify;
             justify-content: space-between; }
-    @media (max-width: 600px) {
-      .header__contact {
-        -webkit-box-orient: horizontal;
-        -webkit-box-direction: reverse;
-                flex-direction: row-reverse; } }
   .header__phone-icon {
     display: -webkit-box;
     display: flex;
@@ -119,8 +117,7 @@ li {
     border: 1px solid white; }
     @media (max-width: 600px) {
       .header__phone-icon {
-        margin-right: 0;
-        margin-left: 10px; } }
+        display: none; } }
   .header__phone-icon-svg {
     margin: auto; }
   .header__phone {
@@ -833,29 +830,34 @@ li {
 .contacts {
   background: -webkit-gradient(linear, left bottom, left top, from(rgba(26, 26, 26, 0.7)), to(rgba(26, 26, 26, 0.7))), radial-gradient(circle at 100% -50%, rgba(226, 28, 46, 0.2) 0%, rgba(0, 0, 0, 0.088) 100%), radial-gradient(circle at 50.07% 43.38%, rgba(26, 26, 26, 0.5) 0%, rgba(26, 26, 26, 0.2) 100%), url("../img/tires.jpg") no-repeat;
   background: linear-gradient(0deg, rgba(26, 26, 26, 0.7), rgba(26, 26, 26, 0.7)), radial-gradient(circle at 100% -50%, rgba(226, 28, 46, 0.2) 0%, rgba(0, 0, 0, 0.088) 100%), radial-gradient(circle at 50.07% 43.38%, rgba(26, 26, 26, 0.5) 0%, rgba(26, 26, 26, 0.2) 100%), url("../img/tires.jpg") no-repeat;
-  background-size: cover;
-  height: 850px; }
+  background-size: cover; }
   .contacts__headline {
     font-size: 36px;
     font-weight: bold;
     letter-spacing: 0.02em;
     line-height: 49px;
     color: #FFFFFF;
-    padding: 76px 0 69px 330px; }
+    padding-left: 330px; }
   .contacts__wrapper {
     display: -webkit-box;
     display: flex;
     -webkit-box-pack: center;
-            justify-content: center; }
+            justify-content: center;
+    padding: 160px 0; }
+    @media (max-width: 650px) {
+      .contacts__wrapper {
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+                flex-direction: column; } }
   .contacts__map {
     display: -webkit-box;
     display: flex;
-    flex-basis: 815px;
+    width: 815px;
     height: 525px; }
   .contacts__contacts-wrapper {
     display: grid;
     background: url(../img/back2.png);
-    grid-template-columns: 90px minmax(300px, 400px) 90px;
+    grid-template-columns: minmax(20px, 90px) minmax(300px, 400px) minmax(20px, 90px);
     grid-template-rows: 88px auto auto auto auto 88px;
     grid-template-areas: ". . ." ". address ." ". time ." ". phone ." ". email ." ". . ."; }
   .contacts__list-item {

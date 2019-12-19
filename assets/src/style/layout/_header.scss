@@ -7,11 +7,15 @@
     justify-content: space-around;
     font-family: 'Noto Sans', sans-serif;
     padding: 10px 80px;
-    @media(max-width: 600px){
+
+    @media(max-width: 600px) {
       padding-right: 40px;
     }
-
-    @media(max-width: $tablet-width) {
+    
+    @media(max-width: 450px) {
+      padding-right: 10px;
+    }
+    @media(max-width: 1200px) {
         justify-content: center;
     }
 
@@ -21,7 +25,7 @@
         flex-direction: row;
         justify-content: space-between;
         
-        @media(max-width: $tablet-width) {
+        @media(max-width: 1200px) {
             display: none;
         }
     }
@@ -45,9 +49,6 @@
     &__contact {
         display: flex;
         justify-content: space-between;
-        @media(max-width: 600px){
-          flex-direction: row-reverse;
-        }
     }
 
     &__phone-icon {
@@ -61,8 +62,7 @@
         align-self: center;
         border: 1px solid white;
         @media(max-width: 600px){
-          margin-right: 0;
-          margin-left: 10px;
+          display: none;
         }
     }
 
@@ -176,7 +176,6 @@
 /* контейнер меню */
 &__box {
     display: block;
-    // text-align: center;
     background-color: $main-color-light;
     box-shadow: 1px 0px 6px rgba(0, 0, 0, .2);
     z-index: 2;
