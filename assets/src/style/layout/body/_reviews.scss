@@ -43,7 +43,7 @@
         height: 45px;
         border: 1.5px solid $text-secondary-light;
         border-radius: 50%;
-        @media (hover: hover) and (pointer: fine) {
+        @media (hover: hover) and (pointer: fine) {  //hover style for computers
         &:hover {
             background: radial-gradient(48.75% 48.75% at 23.75% 21.25%, #FE394B 0%, rgba(254, 57, 75, 0) 100%), 
                         linear-gradient(0deg, #E21C2E, #E21C2E), #C4C4C4;
@@ -54,8 +54,8 @@
                         }
         }
     }
-        @media (hover: none) and (pointer: coarse) {
-        &_ripple::before {
+        @media (hover: none) and (pointer: coarse) {  //click animation for touch devices
+        &_ripple::after {
                 content: '';
                 opacity: 0;
                 transform: scale(1.1);
@@ -66,7 +66,7 @@
                 width: 100%;
                 height: 100%;
             }
-            &_ripple:active::before {
+            &_ripple:active::after {
                 opacity: 1;
                 transform: scale(0);
                 transition: none;
@@ -78,6 +78,7 @@
     &__arrow_previous {
         grid-area: arrow-prev;
         justify-self: center;
+        transform: rotate(360deg); //strange hack for the pseudo-element animation to work. otherwise the whole div is animated on click on touch devices.
 
         @media(max-width: 640px) {
             grid-area: arrows;
@@ -89,7 +90,6 @@
     &__arrow_next {
         grid-area: arrow-next;
         justify-self: center;
-        align-self: start;
         transform: rotate(180deg);
 
         @media(max-width: 640px) {
