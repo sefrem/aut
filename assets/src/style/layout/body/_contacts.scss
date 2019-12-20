@@ -47,7 +47,7 @@
     &__contacts-wrapper {
         display: grid;
         background: url(../img/back2.png);
-        grid-template-columns: minmax(20px, 90px) minmax(300px, 400px) minmax(20px, 90px);
+        grid-template-columns: minmax(10px, 90px) minmax(300px, 400px) minmax(10px, 90px);
         grid-template-rows: 88px auto auto auto auto 88px;
         grid-template-areas: 
                 ". . ."

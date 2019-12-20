@@ -297,7 +297,7 @@ li {
       background: -webkit-gradient(linear, left top, left bottom, color-stop(10.33%, #E21C2E), to(rgba(226, 28, 46, 0.7))), url(../img/hero-background-md.jpg) center center no-repeat;
       background: linear-gradient(180deg, #E21C2E 10.33%, rgba(226, 28, 46, 0.7) 100%), url(../img/hero-background-md.jpg) center center no-repeat;
       background-size: cover; } }
-  @media (max-width: 899px) {
+  @media (max-width: 767px) {
     .hero {
       margin-bottom: 0; } }
   @media (max-width: 330px) {
@@ -612,6 +612,9 @@ li {
     background-clip: text;
     background-blend-mode: normal, color, normal;
     margin-right: 40px; }
+    @media (max-width: 350px) {
+      .about__years-number {
+        margin-right: 10px; } }
   .about__description-text {
     font-size: 16px;
     font-weight: normal;
@@ -762,7 +765,7 @@ li {
           flex-direction: column; }
   .reviews__grid {
     display: grid;
-    grid-template-columns: minmax(20px, 80px) minmax(0px, 155px) minmax(325px, 820px) minmax(0px, 155px) minmax(20px, 190px);
+    grid-template-columns: minmax(5px, 80px) minmax(0px, 155px) minmax(310px, 820px) minmax(0px, 155px) minmax(5px, 190px);
     grid-template-rows: 130px 50px minmax(auto, 200px) auto minmax(100px, 185px);
     grid-template-areas: ". . . . ." ". headline headline-mobile . ." ". . commas . ." ". arrow-prev review-text arrow-next ." ". . arrows . . ";
     align-self: center; }
@@ -912,7 +915,7 @@ li {
   .contacts__contacts-wrapper {
     display: grid;
     background: url(../img/back2.png);
-    grid-template-columns: minmax(20px, 90px) minmax(300px, 400px) minmax(20px, 90px);
+    grid-template-columns: minmax(10px, 90px) minmax(300px, 400px) minmax(10px, 90px);
     grid-template-rows: 88px auto auto auto auto 88px;
     grid-template-areas: ". . ." ". address ." ". time ." ". phone ." ". email ." ". . ."; }
     @media (max-width: 650px) {
