@@ -6,22 +6,19 @@ var path = {
       html: 'docs/',
       js: 'docs/js/',
       css: 'docs/css/',
-      img: 'docs/img/',
-      icons: 'docs/icons/'
+      img: 'docs/img/'
   },
   src: {
       html: 'assets/src/*.html',
       js: 'assets/src/js/main.js',
       style: 'assets/src/style/main.scss',
-      img: 'assets/src/img/**/*.*',
-      icons: 'assets/src/icons/**/*.*'
+      img: 'assets/src/img/**/*.*'
   },
   watch: {
       html: 'assets/src/**/*.html',
       js: 'assets/src/js/**/*.js',
       css: 'assets/src/style/**/*.scss',
-      img: 'assets/src/img/**/*.*',
-      icons: 'assets/srs/icons/**/*.*'
+      img: 'assets/src/img/**/*.*'
   },
   clean: './docs/*'
 };
@@ -112,11 +109,6 @@ gulp.task('image:docs', function () {
       .pipe(gulp.dest(path.docs.img)); // выгрузка готовых файлов
 });
 
-gulp.task('icons:docs', function () {
-  return gulp.src(path.src.icons)
-      .pipe(gulp.dest(path.docs.icons))
-});
-
 // удаление каталога docs 
 gulp.task('clean:docs', function () {
   return gulp.src(path.clean, { read: false })
@@ -135,8 +127,7 @@ gulp.task('docs',
           'html:docs',
           'css:docs',
           'js:docs',
-          'image:docs',
-          'icons:docs'
+          'image:docs'
       )
   )
 );
@@ -147,7 +138,6 @@ gulp.task('watch', function () {
   gulp.watch(path.watch.css, gulp.series('css:docs'));
   gulp.watch(path.watch.js, gulp.series('js:docs'));
   gulp.watch(path.watch.img, gulp.series('image:docs'));
-  gulp.watch(path.watch.icons, gulp.series('icons:docs'));
 });
 
 // задача по умолчанию

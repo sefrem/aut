@@ -162,7 +162,7 @@ justify-content: space-around;
     }
 
         &__content {
-            @include font(14px, normal, 0, 22px, $text-secondary-light);
+            @include font(16px, normal, 0, 24px, $text-secondary-light);
             
             &_alignment {
                 background: $services-background-gradient,
@@ -206,8 +206,8 @@ justify-content: space-around;
         }
 
         &__contact {
-            width: 215px;
-            height: 50px;
+            width: 245px;
+            height: 58px;
             margin: 30px auto 40px;
             background: radial-gradient(48.75% 48.75% at 23.75% 21.25%, #FE394B 0%, rgba(254, 57, 75, 0) 100%), #E21C2E;
             border-radius: 20px;
@@ -223,6 +223,6 @@ justify-content: space-around;
         }
 
         &__phone {
-            @include font(16px, bold, 0.02em, 19px);
+            @include font(16px, bold, 0.02em, 22px);
         }
 }

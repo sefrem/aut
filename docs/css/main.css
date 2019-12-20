@@ -133,12 +133,20 @@ li {
             flex-direction: column;
     -webkit-box-pack: center;
             justify-content: center; }
+    @media (max-width: 330px) {
+      .header__phone {
+        font-size: 14px;
+        line-height: 19px; } }
   .header__phone-info {
     font-size: 16px;
     font-weight: 500;
     letter-spacing: 0.01em;
     line-height: 22px;
     color: #FFFFFF; }
+    @media (max-width: 330px) {
+      .header__phone-info {
+        font-size: 12px;
+        line-height: 16px; } }
   .header__phone-number {
     margin-bottom: 5px;
     color: inherit; }
@@ -202,8 +210,8 @@ li {
             align-items: center;
     /* центрируем содержимое кнопки */
     position: fixed;
-    top: 40px;
-    left: 30px;
+    top: 30px;
+    left: 20px;
     width: 26px;
     height: 26px;
     cursor: pointer;
@@ -278,8 +286,11 @@ li {
   height: 685px;
   display: -webkit-box;
   display: flex;
-  -webkit-box-pack: center;
-          justify-content: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+          flex-direction: column;
+  -webkit-box-align: center;
+          align-items: center;
   margin-bottom: 180px; }
   @media (max-width: 1200px) {
     .hero {
@@ -289,6 +300,9 @@ li {
   @media (max-width: 899px) {
     .hero {
       margin-bottom: 0; } }
+  @media (max-width: 330px) {
+    .hero {
+      height: 500px; } }
   .hero__header {
     font-size: 48px;
     font-weight: bold;
@@ -297,12 +311,21 @@ li {
     color: #FFFFFF;
     margin-top: 114px;
     text-transform: uppercase; }
+    @media (max-width: 330px) {
+      .hero__header {
+        font-size: 26px;
+        line-height: 35px;
+        margin-top: 94px; } }
   .hero__header-line {
     font-size: 280px;
     font-weight: 800;
     letter-spacing: 0.06em;
     line-height: 280px;
     color: #FFFFFF; }
+    @media (max-width: 330px) {
+      .hero__header-line {
+        font-size: 150px;
+        line-height: 150px; } }
   .hero__hero-image {
     position: absolute;
     top: 205px;
@@ -317,6 +340,9 @@ li {
     @media (max-width: 400px) {
       .hero__hero-image {
         top: 335px; } }
+    @media (max-width: 330px) {
+      .hero__hero-image {
+        top: 195px; } }
 
 @media (min-width: 768px) {
   .preload-background-images {
@@ -463,10 +489,10 @@ li {
   .services-accordion__arrow {
     margin-right: 10px; }
   .services-accordion__content {
-    font-size: 14px;
+    font-size: 16px;
     font-weight: normal;
     letter-spacing: 0;
-    line-height: 22px;
+    line-height: 24px;
     color: #DFDFDF; }
     .services-accordion__content_alignment {
       background: -webkit-gradient(linear, left bottom, left top, from(rgba(26, 26, 26, 0.7)), to(rgba(26, 26, 26, 0.7))), radial-gradient(117.69% 47.91% at 50.07% 43.38%, rgba(26, 26, 26, 0.5) 0%, rgba(26, 26, 26, 0.2) 100%), radial-gradient(226.33% 656.26% at 100% -1.1%, rgba(226, 28, 46, 0.2) 0%, rgba(0, 0, 0, 0.088) 100%), url(../img/services/alignment-md.jpg) center center/cover no-repeat;
@@ -493,8 +519,8 @@ li {
       background: -webkit-gradient(linear, left bottom, left top, from(rgba(26, 26, 26, 0.7)), to(rgba(26, 26, 26, 0.7))), radial-gradient(117.69% 47.91% at 50.07% 43.38%, rgba(26, 26, 26, 0.5) 0%, rgba(26, 26, 26, 0.2) 100%), radial-gradient(226.33% 656.26% at 100% -1.1%, rgba(226, 28, 46, 0.2) 0%, rgba(0, 0, 0, 0.088) 100%), url(../img/services/dryCleaning-md.jpg) center center/cover no-repeat;
       background: linear-gradient(0deg, rgba(26, 26, 26, 0.7), rgba(26, 26, 26, 0.7)), radial-gradient(117.69% 47.91% at 50.07% 43.38%, rgba(26, 26, 26, 0.5) 0%, rgba(26, 26, 26, 0.2) 100%), radial-gradient(226.33% 656.26% at 100% -1.1%, rgba(226, 28, 46, 0.2) 0%, rgba(0, 0, 0, 0.088) 100%), url(../img/services/dryCleaning-md.jpg) center center/cover no-repeat; }
   .services-accordion__contact {
-    width: 215px;
-    height: 50px;
+    width: 245px;
+    height: 58px;
     margin: 30px auto 40px;
     background: radial-gradient(48.75% 48.75% at 23.75% 21.25%, #FE394B 0%, rgba(254, 57, 75, 0) 100%), #E21C2E;
     border-radius: 20px;
@@ -517,7 +543,7 @@ li {
     font-size: 16px;
     font-weight: bold;
     letter-spacing: 0.02em;
-    line-height: 19px;
+    line-height: 22px;
     color: #FFFFFF; }
 
 .about {
@@ -706,6 +732,8 @@ li {
     display: flex;
     -webkit-box-pack: center;
             justify-content: center;
+    -webkit-box-align: center;
+            align-items: center;
     width: 80px;
     height: 80px;
     border-radius: 50%;
@@ -856,6 +884,9 @@ li {
     line-height: 49px;
     color: #FFFFFF;
     padding: 70px 120px; }
+    @media (max-width: 650px) {
+      .contacts__headline {
+        padding: 50px 95px 40px; } }
   .contacts__wrapper {
     display: -webkit-box;
     display: flex;
@@ -866,7 +897,8 @@ li {
       .contacts__wrapper {
         -webkit-box-orient: vertical;
         -webkit-box-direction: normal;
-                flex-direction: column; } }
+                flex-direction: column;
+        padding-bottom: 0; } }
   .contacts__map {
     display: -webkit-box;
     display: flex;
@@ -874,13 +906,18 @@ li {
     height: 525px; }
     @media (max-width: 650px) {
       .contacts__map {
-        width: 100%; } }
+        width: 100%;
+        height: 350px; } }
   .contacts__contacts-wrapper {
     display: grid;
     background: url(../img/back2.png);
     grid-template-columns: minmax(20px, 90px) minmax(300px, 400px) minmax(20px, 90px);
     grid-template-rows: 88px auto auto auto auto 88px;
     grid-template-areas: ". . ." ". address ." ". time ." ". phone ." ". email ." ". . ."; }
+    @media (max-width: 650px) {
+      .contacts__contacts-wrapper {
+        grid-row-gap: 30px;
+        grid-template-rows: repeat(6, auto); } }
   .contacts__list-item {
     display: -webkit-box;
     display: flex; }
