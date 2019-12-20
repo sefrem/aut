@@ -16,7 +16,7 @@
     &__content-wrapper {
         display: flex;
         flex-direction: row;
-        width: 1400px;
+        width: 1450px;
         justify-content: space-around;
         @media(max-width: 1155px) {
             flex-direction: column;
@@ -26,13 +26,12 @@
     
     &__header {
         display: flex;
-        flex-basis: 515px;
+        // flex-basis: 515px;
          max-height: 397px;
         @media(max-width: 600px) {
             flex-direction: column;
             max-height: none;
             align-items: center;
-            flex-basis: 0;
         }
     }       
 

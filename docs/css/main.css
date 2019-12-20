@@ -655,7 +655,7 @@ li {
     -webkit-box-orient: horizontal;
     -webkit-box-direction: normal;
             flex-direction: row;
-    width: 1400px;
+    width: 1450px;
     justify-content: space-around; }
     @media (max-width: 1155px) {
       .advantages__content-wrapper {
@@ -667,7 +667,6 @@ li {
   .advantages__header {
     display: -webkit-box;
     display: flex;
-    flex-basis: 515px;
     max-height: 397px; }
     @media (max-width: 600px) {
       .advantages__header {
@@ -676,8 +675,7 @@ li {
                 flex-direction: column;
         max-height: none;
         -webkit-box-align: center;
-                align-items: center;
-        flex-basis: 0; } }
+                align-items: center; } }
   .advantages__headline {
     font-size: 34px;
     font-weight: 800;
