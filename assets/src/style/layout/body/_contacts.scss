@@ -14,11 +14,18 @@
         background-size: cover;      
     }
    
+    &__headline-wrapper {
+        height: 195px;
+        display: flex;
+        align-items: center;
+    }
+
     &__headline {
         @include font(36px, bold, 0.02em, 49px);
-        padding: 70px 120px;
-        @media(max-width: 650px) {
-            padding: 50px 95px 40px;
+        padding-left: 120px;
+        @media(max-width: 400px) {
+           padding: 0;
+           margin: auto;
          }
     }
 

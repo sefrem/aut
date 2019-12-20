@@ -2,9 +2,24 @@
    
     position: relative;
     background: linear-gradient(0.14deg, #050304 -5.31%, rgba(215, 215, 215, 0.2) 158.26%), #050304;
+    height: 120px;
+    display: flex;
+    align-items: center;
+    position:relative;
+
+    @media(max-width: 600px) {
+        flex-direction: column;
+        justify-content: center;
+    }
 
     &__logo {
-        padding: 20px 80px
+        position: absolute;
+        padding-left: 80px;
+
+        @media(max-width: 600px) {
+            position: relative;
+            padding-left: 0px;
+        }
     }
     &__logo-name {
         @include font(9px, bold, 0.05em, 12px);
@@ -18,10 +33,12 @@
    
     &__name {
         @include font(16px, normal, 0.01em, 24px, $text-secondary-light);
-        position: absolute;
-        left: 50%;
-        top: 50%;
-        transform: translate(-50%, -50%);
+       margin:auto;
+       
+       @media(max-width: 600px) {
+            font-size: 12px;
+            margin: 0;
+        }
     }
 }
 
