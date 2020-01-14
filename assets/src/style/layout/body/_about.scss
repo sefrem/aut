@@ -28,6 +28,7 @@
     &__header {
         display: flex;
         justify-content: space-between;
+
     }
 
     &__header-wrapper {
@@ -53,6 +54,10 @@
         background-clip: text;
         background-blend-mode: normal, color, normal;
         margin-right: 40px;
+
+        @media(max-width: 350px) {
+            margin-right: 10px;
+        }
     }
 
     &__description-text {

@@ -223,7 +223,7 @@ li {
     position: absolute;
     width: 100%;
     height: 2px;
-    background-color: white;
+    background-color: #CCDBDC;
     -webkit-transition-duration: .35s;
             transition-duration: .35s; }
   .menu__btn > span::before {
@@ -297,7 +297,7 @@ li {
       background: -webkit-gradient(linear, left top, left bottom, color-stop(10.33%, #E21C2E), to(rgba(226, 28, 46, 0.7))), url(../img/hero-background-md.jpg) center center no-repeat;
       background: linear-gradient(180deg, #E21C2E 10.33%, rgba(226, 28, 46, 0.7) 100%), url(../img/hero-background-md.jpg) center center no-repeat;
       background-size: cover; } }
-  @media (max-width: 899px) {
+  @media (max-width: 767px) {
     .hero {
       margin-bottom: 0; } }
   @media (max-width: 330px) {
@@ -476,7 +476,7 @@ li {
             transform: rotate(180deg); }
   .services-accordion__name {
     display: block;
-    padding: 15px 0 15px 10px;
+    padding: 20px 0 20px 10px;
     font-size: 16px;
     font-weight: 500;
     letter-spacing: 0;
@@ -612,6 +612,9 @@ li {
     background-clip: text;
     background-blend-mode: normal, color, normal;
     margin-right: 40px; }
+    @media (max-width: 350px) {
+      .about__years-number {
+        margin-right: 10px; } }
   .about__description-text {
     font-size: 16px;
     font-weight: normal;
@@ -652,7 +655,7 @@ li {
     -webkit-box-orient: horizontal;
     -webkit-box-direction: normal;
             flex-direction: row;
-    width: 1400px;
+    width: 1450px;
     justify-content: space-around; }
     @media (max-width: 1155px) {
       .advantages__content-wrapper {
@@ -664,7 +667,6 @@ li {
   .advantages__header {
     display: -webkit-box;
     display: flex;
-    flex-basis: 515px;
     max-height: 397px; }
     @media (max-width: 600px) {
       .advantages__header {
@@ -684,8 +686,11 @@ li {
     max-width: 200px; }
     @media (max-width: 600px) {
       .advantages__headline {
-        max-width: 300px;
-        margin-top: -20px; } }
+        max-width: 180px;
+        margin-top: -20px;
+        font-size: 20px;
+        line-height: 27px;
+        margin-top: 0px; } }
   .advantages__quantity {
     font-size: 382px;
     font-weight: 800;
@@ -698,6 +703,10 @@ li {
     -webkit-background-clip: text;
     background-clip: text;
     background-blend-mode: normal, color; }
+    @media (max-width: 600px) {
+      .advantages__quantity {
+        font-size: 181px;
+        line-height: 181px; } }
   .advantages__list {
     display: -webkit-box;
     display: flex;
@@ -727,6 +736,9 @@ li {
       .advantages__list-item {
         margin: 20px 0;
         height: 180px; } }
+    @media (max-width: 600px) {
+      .advantages__list-item {
+        margin-top: 40px; } }
   .advantages__list-icon {
     display: -webkit-box;
     display: flex;
@@ -752,6 +764,9 @@ li {
     line-height: 24px;
     color: #DFDFDF;
     text-align: center; }
+    @media (max-width: 600px) {
+      .advantages__description {
+        padding: 0 10px; } }
 
 .reviews {
   display: -webkit-box;
@@ -762,10 +777,13 @@ li {
           flex-direction: column; }
   .reviews__grid {
     display: grid;
-    grid-template-columns: minmax(20px, 80px) minmax(0px, 155px) minmax(325px, 820px) minmax(0px, 155px) minmax(20px, 190px);
-    grid-template-rows: 130px 50px minmax(auto, 200px) auto minmax(100px, 185px);
+    grid-template-columns: minmax(5px, 80px) minmax(0px, 155px) minmax(310px, 820px) minmax(0px, 155px) minmax(5px, 190px);
+    grid-template-rows: 130px 50px 200px auto minmax(100px, 185px);
     grid-template-areas: ". . . . ." ". headline headline-mobile . ." ". . commas . ." ". arrow-prev review-text arrow-next ." ". . arrows . . ";
     align-self: center; }
+    @media (max-width: 640px) {
+      .reviews__grid {
+        grid-template-rows: 65px 50px 125px auto minmax(100px, 185px); } }
   .reviews__headline {
     grid-area: headline;
     font-size: 36px;
@@ -828,6 +846,7 @@ li {
       .reviews__arrow_previous {
         grid-area: arrows;
         justify-self: center;
+        align-self: center;
         -webkit-transform: translateX(-100%);
                 transform: translateX(-100%); } }
   .reviews__arrow_next {
@@ -839,6 +858,7 @@ li {
       .reviews__arrow_next {
         grid-area: arrows;
         justify-self: center;
+        align-self: center;
         -webkit-transform: rotate(180deg) translateX(-100%);
                 transform: rotate(180deg) translateX(-100%); } }
   .reviews__review {
@@ -878,16 +898,23 @@ li {
       background: -webkit-gradient(linear, left bottom, left top, from(rgba(26, 26, 26, 0.7)), to(rgba(26, 26, 26, 0.7))), radial-gradient(circle at 100% -50%, rgba(226, 28, 46, 0.2) 0%, rgba(0, 0, 0, 0.088) 100%), radial-gradient(circle at 50.07% 43.38%, rgba(26, 26, 26, 0.5) 0%, rgba(26, 26, 26, 0.2) 100%), url("../img/tires-md.jpg") no-repeat;
       background: linear-gradient(0deg, rgba(26, 26, 26, 0.7), rgba(26, 26, 26, 0.7)), radial-gradient(circle at 100% -50%, rgba(226, 28, 46, 0.2) 0%, rgba(0, 0, 0, 0.088) 100%), radial-gradient(circle at 50.07% 43.38%, rgba(26, 26, 26, 0.5) 0%, rgba(26, 26, 26, 0.2) 100%), url("../img/tires-md.jpg") no-repeat;
       background-size: cover; } }
+  .contacts__headline-wrapper {
+    height: 195px;
+    display: -webkit-box;
+    display: flex;
+    -webkit-box-align: center;
+            align-items: center; }
   .contacts__headline {
     font-size: 36px;
     font-weight: bold;
     letter-spacing: 0.02em;
     line-height: 49px;
     color: #FFFFFF;
-    padding: 70px 120px; }
-    @media (max-width: 650px) {
+    padding-left: 120px; }
+    @media (max-width: 400px) {
       .contacts__headline {
-        padding: 50px 95px 40px; } }
+        padding: 0;
+        margin: auto; } }
   .contacts__wrapper {
     display: -webkit-box;
     display: flex;
@@ -912,7 +939,7 @@ li {
   .contacts__contacts-wrapper {
     display: grid;
     background: url(../img/back2.png);
-    grid-template-columns: minmax(20px, 90px) minmax(300px, 400px) minmax(20px, 90px);
+    grid-template-columns: minmax(10px, 90px) minmax(300px, 400px) minmax(10px, 90px);
     grid-template-rows: 88px auto auto auto auto 88px;
     grid-template-areas: ". . ." ". address ." ". time ." ". phone ." ". email ." ". . ."; }
     @media (max-width: 650px) {
@@ -950,9 +977,27 @@ li {
 
 .footer {
   position: relative;
-  background: linear-gradient(0.14deg, #050304 -5.31%, rgba(215, 215, 215, 0.2) 158.26%), #050304; }
+  background: linear-gradient(0.14deg, #050304 -5.31%, rgba(215, 215, 215, 0.2) 158.26%), #050304;
+  height: 120px;
+  display: -webkit-box;
+  display: flex;
+  -webkit-box-align: center;
+          align-items: center;
+  position: relative; }
+  @media (max-width: 600px) {
+    .footer {
+      -webkit-box-orient: vertical;
+      -webkit-box-direction: normal;
+              flex-direction: column;
+      -webkit-box-pack: center;
+              justify-content: center; } }
   .footer__logo {
-    padding: 20px 80px; }
+    position: absolute;
+    padding-left: 80px; }
+    @media (max-width: 600px) {
+      .footer__logo {
+        position: relative;
+        padding-left: 0px; } }
   .footer__logo-name {
     font-size: 9px;
     font-weight: bold;
@@ -973,8 +1018,8 @@ li {
     letter-spacing: 0.01em;
     line-height: 24px;
     color: #DFDFDF;
-    position: absolute;
-    left: 50%;
-    top: 50%;
-    -webkit-transform: translate(-50%, -50%);
-            transform: translate(-50%, -50%); }
+    margin: auto; }
+    @media (max-width: 600px) {
+      .footer__name {
+        font-size: 12px;
+        margin: 0; } }
