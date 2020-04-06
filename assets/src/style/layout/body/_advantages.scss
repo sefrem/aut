@@ -77,13 +77,10 @@
         display: flex;
         flex-direction: column;
         max-width: 320px;
-        height: 200px;
-        justify-content: space-between;
         align-items: center;
         margin: 35px 0;
         @media(max-width: 1155px) {
             margin: 20px 0;
-            height: 180px;
         }
 
         @media(max-width: 600px) {
@@ -103,6 +100,7 @@
     }
 
     &__name {
+        margin: 20px 0 15px;
         @include font(20px, 600, 0, 27px)
     }
 
