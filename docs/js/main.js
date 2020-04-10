@@ -8,19 +8,18 @@ const hamburgerCheckbox = document.getElementById("menu__toggle");
 const main = document.querySelector(".main");
 const reviews = document.querySelectorAll(".reviews__review");
 
-let activeItem = listItem[0]; //The active selection by default is the first one
+let activeItem = listItem[0]; 
 let prevActiveitem;
 let activeDescription = servicesDescription[0];
-activeDescription.style.visibility = "visible"; //The active description by default is the first one
+activeDescription.style.visibility = "visible"; 
 let activeReviewId = 1;
-let activeReview = document.getElementById(activeReviewId); //The visible review by default is the first one.
+let activeReview = document.getElementById(activeReviewId);
 activeReview.style.visibility = "visible";
 let mapsInitialized = false;
-let x0 = null; //The first point of touch event.
+let x0 = null;
+let y0 = null;
 
 function onChangeSelect(e) {
-  //Here we change the background and add class "active" to a current selected option.
-
   services.style.background = `url('./img/services/${e.target.dataset.name}.jpg') center center / cover no-repeat`;
   activeItem.classList.remove("services__list-item_active");
   this.classList.add("services__list-item_active");
@@ -30,9 +29,8 @@ function onChangeSelect(e) {
 }
 
 function changeDescription() {
-  //Also changing the description to match the selected service option.
   activeDescription.style.visibility = "hidden";
-  servicesDescription.forEach(item => {
+  servicesDescription.forEach((item) => {
     if (item.dataset.name === activeItem.dataset.name) {
       activeDescription = item;
     }
@@ -66,31 +64,11 @@ function flipReview() {
   activeReview.style.visibility = "visible";
 }
 
-function initMap() {
-  //Adding Yandex maps.
-  const myMap = new ymaps.Map(
-    "map",
-    {
-      center: [51.76595957, 36.22226938],
-      zoom: 17
-    },
-    {
-      iconLayout: "default#image"
-    }
-  );
-  myGeoObject = new ymaps.GeoObject({
-    geometry: {
-      type: "Point",
-      coordinates: [51.76595957, 36.22226938]
-    }
-  });
-  myMap.geoObjects.add(myGeoObject);
-}
+const throttledCheckHeader = throttle(checkHeader, 50);
 
 function throttle(func, delay) {
-  //Throttle for the mouse event.
   let inThrottle;
-  return function() {
+  return function () {
     if (!inThrottle) {
       func.apply(this, arguments);
       inThrottle = true;
@@ -100,7 +78,6 @@ function throttle(func, delay) {
 }
 
 function checkHeader() {
-  //After some scrolling we make the header sticky and after some more scrolling we render it in view. 2 steps needed in order to set the transformation property for the transition.
   let scrollPosition = Math.round(window.scrollY);
   if (scrollPosition >= 400 && window.innerWidth > 1200) {
     header.classList.add("header_sticky");
@@ -112,44 +89,60 @@ function checkHeader() {
   } else {
     header.classList.remove("header_sticky-inView");
   }
+  initializeMapIfScrolledToPosition();
+}
+
+function initializeMapIfScrolledToPosition() {
+  let scrollPosition = Math.round(window.scrollY);
   if (scrollPosition >= 3500 && !mapsInitialized) {
     ymaps.ready(initMap);
     mapsInitialized = true;
   }
 }
 
-const throttledCheck = throttle(checkHeader, 50);
+function initMap() {
+  const myMap = new ymaps.Map(
+    "map",
+    {
+      center: [51.76595957, 36.22226938],
+      zoom: 17,
+    },
+    {
+      iconLayout: "default#image",
+    }
+  );
+  myGeoObject = new ymaps.GeoObject({
+    geometry: {
+      type: "Point",
+      coordinates: [51.76595957, 36.22226938],
+    },
+  });
+  myMap.geoObjects.add(myGeoObject);
+  myMap.behaviors.disable('drag');
+}
 
 function closeHamburgerMenu() {
-  //This function is for closing the hamburger menu if it's open by clocking anywhere within the window.
   if (hamburgerCheckbox.checked) hamburgerCheckbox.checked = false;
 }
 
 function lock(e) {
-  //remembering the first point of the touchevent.
-  e.preventDefault();
-  x0 = e.changedTouches[0].clientX;
+  x0 = e.changedTouches[0].screenX;
+  y0 = e.changedTouches[0].screenY;
 }
 
 function move(e) {
-  //calculating the difference between the first and the last point of the touch event. And change the review accorfingly.
-  e.preventDefault();
-  if (x0 || x0 === 0) {
-    let diff = e.changedTouches[0].clientX - x0;
-    if (diff < 0) {
-      flipReview(activeReviewId++);
-    } else {
-      flipReview(activeReviewId--);
-    }
-    diff = null;
+  let diffX = e.changedTouches[0].screenX - x0;
+  let diffY = e.changedTouches[0].screenY - y0;
+  if (Math.abs(diffY) < 40) {
+    diffX < 0 ? flipReview(activeReviewId++) : flipReview(activeReviewId--);
   }
 }
 
-listItem.forEach(item => item.addEventListener("click", onChangeSelect));
-arrows.forEach(item => item.addEventListener("click", arrowSelect));
-window.addEventListener("scroll", throttledCheck);
+listItem.forEach((item) => item.addEventListener("click", onChangeSelect));
+arrows.forEach((item) => item.addEventListener("click", arrowSelect));
+window.addEventListener("scroll", throttledCheckHeader);
 main.addEventListener("click", closeHamburgerMenu);
-reviews.forEach(review => {
+reviews.forEach((review) => {
   review.addEventListener("touchstart", lock);
   review.addEventListener("touchend", move);
 });

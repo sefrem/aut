@@ -929,7 +929,8 @@ li {
     display: -webkit-box;
     display: flex;
     width: 815px;
-    height: 525px; }
+    height: 525px;
+    touch-action: auto; }
     @media (max-width: 650px) {
       .contacts__map {
         width: 100%;

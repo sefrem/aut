@@ -44,6 +44,7 @@
         display: flex;
         width: 815px;
         height: 525px;
+        touch-action: auto;
 
         @media(max-width: 650px) {
             width: 100%;
